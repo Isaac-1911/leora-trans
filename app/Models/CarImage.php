@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class CarImage extends Model
+{
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'car_id',
+        'image'
+    ];
+
+    public function cars(){
+        return $this->belongsTo(Car::class);
+    }
+}
