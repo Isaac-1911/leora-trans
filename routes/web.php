@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CarController;
+use App\Http\Controllers\Admin\CarImageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,11 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function() {
         Route::get('/{car}', [CarController::class, 'show'])->name('show');
         Route::put('/{car}', [CarController::class, 'update'])->name('update');
         Route::delete('/{car}', [CarController::class, 'destroy'])->name('delete');
+    });
+
+    Route::prefix('car-images')->name('car-images.')->group(function() {
+        Route::post('/', [CarImageController::class, 'store'])->name('store');
+        Route::delete('/{carImage}', [CarImageController::class, 'destroy'])->name('delete');
     });
 
 });

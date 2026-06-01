@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $cars = Car::latest()->paginate(10);
@@ -21,17 +18,11 @@ class CarController extends Controller
         return view('admin.cars.index', compact('cars'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCarRequest $request)
     {
         $data = $request->validated();
@@ -46,25 +37,16 @@ class CarController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Car $car)
     {
         return view('admin.cars.show', compact('car'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Car $car)
     {
         return view('admin.cars.edit', compact('car'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCarRequest $request, Car $car)
     {
 
@@ -86,9 +68,6 @@ class CarController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Car $car)
     {
         if ($car->thumbnail && Storage::disk('public')->exists($car->thumbnail)){
