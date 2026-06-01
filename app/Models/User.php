@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function verifiedPayment(){
         return $this->hasMany(Payment::class, 'verified_by');
     }
+
+    public function isAdmin(): bool{
+        return $this->role === 'admin';
+    }
 }
