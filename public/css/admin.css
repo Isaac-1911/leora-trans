@@ -710,6 +710,50 @@ body {
     margin-bottom:16px;
 }
 
+/* ==========================
+   IMAGE PREVIEW
+========================== */
+
+.upload-box{
+
+    position:relative;
+
+    height:120px;
+
+    border:2px dashed #3a3a3a;
+
+    background:#161616;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+.image-preview{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:none;
+}
+
+.upload-box.has-image{
+
+    border:none;
+}
+
+.upload-box.has-image #uploadPlaceholder{
+
+    display:none;
+}
+
 /* ==================================
    FOOTER
 ================================== */

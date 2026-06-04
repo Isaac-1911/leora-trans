@@ -205,9 +205,9 @@
                         THUMBNAIL IMAGE
                     </label>
 
-                    <label for="thumbnail" class="upload-box">
+                    <label for="thumbnail" id="uploadBox" class="upload-box">
 
-                        <div class="upload-content">
+                        <div id="uploadPlaceholder">
 
                             <p class="upload-title">
                                 Click to upload or drag and drop
@@ -219,12 +219,11 @@
 
                         </div>
 
-                    </label>
-                    <p id="fileName" class="selected-file">
-                        No file selected
-                    </p>
+                        <img id="imagePreview" class="image-preview" alt="Preview">
 
-                    <input type="file" id="thumbnail" name="thumbnail" hidden>
+                    </label>
+
+                    <input type="file" id="thumbnail" name="thumbnail" accept="image/*" hidden>
 
                 </div>
 
@@ -293,6 +292,37 @@
                 fileName.textContent =
                     this.files[0].name;
             }
+
+        });
+
+
+        const thumbnailInput =
+            document.getElementById('thumbnail');
+
+        const imagePreview =
+            document.getElementById('imagePreview');
+
+        const uploadBox =
+            document.getElementById('uploadBox');
+
+        thumbnailInput.addEventListener('change', function() {
+
+            const file = this.files[0];
+
+            if (!file) return;
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+
+                imagePreview.src = e.target.result;
+
+                imagePreview.style.display = 'block';
+
+                uploadBox.classList.add('has-image');
+            };
+
+            reader.readAsDataURL(file);
 
         });
     </script>
