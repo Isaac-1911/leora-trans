@@ -13,7 +13,7 @@ class CarController extends Controller
 {
     public function index()
     {
-        $cars = Car::latest()->paginate(10);
+        $cars = Car::latest()->paginate(12);
 
         return view('admin.cars.index', compact('cars'));
     }

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
+
+:root {
+    --canvas: #000000;
+    --surface: #1a1a1a;
+    --surface-soft: #0d0d0d;
+
+    --border: #3c3c3c;
+
+    --text: #ffffff;
+    --text-secondary: #bbbbbb;
+
+    --m-blue-light: #0066b1;
+    --m-blue-dark: #1c69d4;
+    --m-red: #e22718;
+}
+
+body {
+    background: var(--canvas);
+    color: var(--text);
+}
