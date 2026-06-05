@@ -271,16 +271,21 @@ body {
 .available{
     color:#41d67d;
     border:1px solid #41d67d;
+    background-color: #ffffff;
 }
 
 .rented{
     color:#4c82ff;
     border:1px solid #4c82ff;
+    background-color: #ffffff;
+
 }
 
 .reserved{
     color:#ffc107;
     border:1px solid #ffc107;
+    background-color: #ffffff;
+
 }
 
 /* =========================
@@ -382,8 +387,13 @@ body {
 }
 
 .btn-outline:hover{
-    background:#fff;
+    background:var(--m-blue-light);
     color:#000;
+}
+
+.btn-delete:hover{
+    background: var(--m-red);
+    color: #000;
 }
 
 /* =========================
@@ -808,13 +818,16 @@ body {
 
     color:white;
 
-    font-size:12px;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
     cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.btn-cancel:hover{
+
+    background:white;
+
+    color:black;
 }
 
 /* ==================================
@@ -855,4 +868,136 @@ body {
 .maintenance{
     color:#ff5252;
     border:1px solid #ff5252;
+}
+
+/* Toas notification alert */
+/* ==========================
+   TOAST
+========================== */
+
+.toast{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    min-width:280px;
+    max-width:400px;
+
+    padding:14px 18px;
+
+    z-index:99999;
+
+    color:white;
+
+    font-size:13px;
+
+    border-left:4px solid;
+
+    animation:slideIn .3s ease;
+
+    box-shadow:
+    0 0 20px rgba(0,0,0,.3);
+}
+
+.toast-success{
+
+    background:#111;
+
+    border-color:#22c55e;
+}
+
+.toast-error{
+
+    background:#111;
+
+    border-color:#ef4444;
+}
+
+@keyframes slideIn{
+
+    from{
+        opacity:0;
+        transform:translateX(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* ==========================
+   DELETE MODAL CARS
+========================== */
+
+.delete-modal{
+
+    width:450px;
+
+    background:#171717;
+
+    border:1px solid #2f2f2f;
+
+    padding:24px;
+}
+
+.delete-modal h2{
+
+    font-size:14px;
+
+    margin-bottom:16px;
+}
+
+.delete-modal p{
+
+    color:#9b9b9b;
+
+    font-size:12px;
+}
+
+.delete-modal h3{
+
+    margin:14px 0;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+.delete-warning{
+
+    color:#ff6b6b !important;
+
+    margin-bottom:20px;
+}
+
+.delete-actions{
+
+    display:flex;
+
+    gap:10px;
+}
+
+.btn-danger{
+
+    flex:1;
+
+    height:40px;
+
+    border:none;
+
+    background:#dc2626;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.btn-danger:hover{
+
+    background:#ef4444;
 }

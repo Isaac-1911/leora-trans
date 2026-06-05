@@ -27,6 +27,9 @@
 
     </div>
 
+
+    @include('partials.alert')
+    @stack('scripts')
 </body>
-@stack('scripts')
+
 </html>
