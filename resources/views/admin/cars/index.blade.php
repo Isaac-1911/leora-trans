@@ -34,19 +34,50 @@
     </div>
 
     <!-- Action Bar -->
-    <div class="action-bar">
+    <form method="GET" action="{{ route('admin.cars.index') }}" class="action-bar">
 
-        <input type="text" placeholder="Search vehicles..." class="search-input">
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search vehicles..."
+            class="search-input"
+            {{-- oninput="this.form.submit()" --}}
+            >
 
-        <select class="filter-select">
-            <option>All Brands</option>
+        <select name="brand" class="filter-select">
+
+            <option value="">
+                All Brands
+            </option>
+
+            @foreach ($brands as $brand)
+                <option value="{{ $brand }}" @selected(request('brand') == $brand)>
+
+                    {{ $brand }}
+
+                </option>
+            @endforeach
+
         </select>
 
-        <select class="filter-select">
-            <option>All Status</option>
+        <select name="status" class="filter-select">
+
+            <option value="">
+                All Status
+            </option>
+
+            <option value="available" @selected(request('status') == 'available')>
+                Available
+            </option>
+
+            <option value="rented" @selected(request('status') == 'rented')>
+                Rented
+            </option>
+
+            <option value="maintenance" @selected(request('status') == 'maintenance')>
+                Maintenance
+            </option>
+
         </select>
 
-    </div>
+    </form>
 
     <!-- Cars Grid -->
     <div class="cars-grid">
@@ -627,5 +658,33 @@
                 editModal.classList.remove('show');
 
             });
+
+        const editThumbnailInput =
+            document.getElementById('editThumbnail');
+
+        const editImagePreview =
+            document.getElementById('editImagePreview');
+
+        editThumbnailInput.addEventListener('change', function() {
+
+            const file = this.files[0];
+
+            if (!file) return;
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+
+                editImagePreview.src =
+                    e.target.result;
+
+                editImagePreview.style.display =
+                    'block';
+
+            };
+
+            reader.readAsDataURL(file);
+
+        });
     </script>
 @endpush

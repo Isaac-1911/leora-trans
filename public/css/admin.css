@@ -166,6 +166,12 @@ body {
     margin-bottom:20px;
 }
 
+.action-bar{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
 .search-input{
     flex:1;
 
@@ -787,19 +793,25 @@ body {
 
     height:40px;
 
-    border:none;
+    border: 1px solid #fff;
 
-    background:white;
+    background:transparent;
 
-    color:black;
+    color:#fff;
 
     font-size:12px;
 
     font-weight:600;
 
-    letter-spacing:.5px;
+    letter-spacing:.6px;
 
     cursor:pointer;
+}
+
+
+.btn-save:hover{
+    background-color: var(--m-blue-dark);
+    color: #000;
 }
 
 /* ==================================
