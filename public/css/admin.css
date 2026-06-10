@@ -1018,3 +1018,540 @@ body {
 
     background:#ef4444;
 }
+
+/* Booking Page */
+
+.booking-filter-card{
+
+    background:#161616;
+
+    border:1px solid #2b2b2b;
+
+    padding:22px;
+
+    margin-top:18px;
+
+    margin-bottom:18px;
+}
+
+.booking-filter{
+
+    display:flex;
+
+    gap:8px;
+}
+
+.booking-filter button{
+
+    height:40px;
+
+    padding:0 18px;
+
+    background:transparent;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+}
+
+.booking-filter button.active{
+
+    background:#fff;
+
+    color:#000;
+
+    border-color:#fff;
+}
+
+.booking-table-card{
+
+    background:#161616;
+
+    border:1px solid #2b2b2b;
+
+    padding:20px;
+}
+
+.booking-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+
+}
+
+.booking-table thead th{
+
+    text-align:left;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    color:#8f8f8f;
+
+    font-weight:500;
+
+    padding:16px;
+
+    border-bottom:1px solid #2b2b2b;
+}
+
+.booking-table tbody td{
+
+    padding:16px;
+
+    border-bottom:1px solid #2b2b2b;
+
+    font-size:13px;
+
+    color:#fff;
+}
+
+.customer-name{
+
+    font-weight:600;
+
+    display:block;
+
+    margin-bottom:4px;
+}
+
+.customer-phone{
+
+    color:#999;
+
+    font-size:12px;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:4px 10px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    border:1px solid;
+}
+
+.badge-green{
+
+    color:#22c55e;
+
+    border-color:#22c55e;
+}
+
+.badge-blue{
+
+    color:#3b82f6;
+
+    border-color:#3b82f6;
+}
+
+.badge-yellow{
+
+    color:#eab308;
+
+    border-color:#eab308;
+}
+
+.badge-gray{
+
+    color:#999;
+
+    border-color:#666;
+}
+
+/* =========================
+   BOOKING PAGE
+========================= */
+
+.page-header{
+
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+
+    margin-bottom:24px;
+}
+
+.title-strip{
+
+    width:6px;
+    height:42px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #0066b1 0%,
+        #0066b1 33%,
+        #1c69d4 33%,
+        #1c69d4 66%,
+        #e22718 66%,
+        #e22718 100%
+    );
+}
+
+.page-title{
+
+    font-size:24px;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    margin:0;
+}
+
+.page-subtitle{
+
+    margin-top:4px;
+
+    color:#999;
+
+    font-size:14px;
+}
+
+/* =========================
+   FILTER CARD
+========================= */
+
+.booking-filter-card{
+
+    background:#161616;
+
+    border:1px solid #2b2b2b;
+
+    padding:24px;
+
+    margin-bottom:24px;
+}
+
+.booking-filter{
+
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.booking-filter button{
+
+    height:40px;
+
+    padding:0 18px;
+
+    background:transparent;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.booking-filter button:hover{
+
+    border-color:#fff;
+}
+
+.booking-filter button.active{
+
+    background:#fff;
+
+    color:#000;
+
+    border-color:#fff;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.booking-table-card{
+
+    background:#161616;
+
+    border:1px solid #2b2b2b;
+
+    padding:20px;
+
+    overflow-x:auto;
+}
+
+.booking-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.booking-table thead th{
+
+    padding:18px 20px;
+
+    text-align:left;
+
+    color:#8f8f8f;
+
+    font-size:11px;
+
+    font-weight:500;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    border-bottom:1px solid #2b2b2b;
+}
+
+.booking-table tbody td{
+
+    padding:18px 20px;
+
+    color:#fff;
+
+    font-size:13px;
+
+    border-bottom:1px solid #2b2b2b;
+
+    vertical-align:middle;
+}
+
+/* =========================
+   CUSTOMER
+========================= */
+
+.customer-name{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:4px;
+}
+
+.customer-phone{
+
+    font-size:12px;
+
+    color:#9ca3af;
+}
+
+/* =========================
+   RENTAL PERIOD
+========================= */
+
+.rental-date{
+
+    display:block;
+
+    margin-bottom:4px;
+}
+
+.rental-days{
+
+    font-size:12px;
+
+    color:#9ca3af;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+
+    display:inline-block;
+
+    padding:5px 12px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    border:1px solid;
+
+    white-space:nowrap;
+}
+
+.badge-green{
+
+    color:#22c55e;
+
+    border-color:#22c55e;
+}
+
+.badge-blue{
+
+    color:#3b82f6;
+
+    border-color:#3b82f6;
+}
+
+.badge-yellow{
+
+    color:#eab308;
+
+    border-color:#eab308;
+}
+
+.badge-gray{
+
+    color:#a3a3a3;
+
+    border-color:#6b7280;
+}
+
+.badge-red{
+
+    color:#ef4444;
+
+    border-color:#ef4444;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+
+.btn-view{
+
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-view:hover{
+
+    border-color:#fff;
+
+    background:#222;
+}
+
+/* =========================
+   BOOKING SCALE FIX
+========================= */
+
+.page-title{
+    font-size:22px;
+}
+
+.page-subtitle{
+    font-size:13px;
+}
+
+.title-strip{
+    width:5px;
+    height:38px;
+}
+
+.booking-filter-card{
+    padding:18px;
+    margin-bottom:18px;
+}
+
+.booking-filter{
+    gap:8px;
+}
+
+.booking-filter button{
+
+    height:36px;
+
+    padding:0 16px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+}
+
+.booking-table-card{
+    padding:16px;
+}
+
+.booking-table thead th{
+
+    padding:14px 16px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+}
+
+.booking-table tbody td{
+
+    padding:14px 16px;
+
+    font-size:13px;
+}
+
+.customer-name{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:3px;
+}
+
+.customer-phone{
+
+    font-size:12px;
+}
+
+.rental-days{
+
+    font-size:12px;
+}
+
+.badge{
+
+    padding:4px 10px;
+
+    font-size:10px;
+
+    letter-spacing:.8px;
+}
+
+.btn-view{
+
+    width:32px;
+    height:32px;
+
+    font-size:12px;
+}

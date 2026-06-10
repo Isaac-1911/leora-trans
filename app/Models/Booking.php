@@ -8,6 +8,8 @@ class Booking extends Model
 {
     protected $primaryKey = 'id';
 
+    protected $table = 'bookings';
+
     protected $fillable = [
         'booking_code',
         'car_id',

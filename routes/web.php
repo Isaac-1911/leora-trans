@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarImageController;
 use App\Http\Controllers\ProfileController;
@@ -34,6 +35,10 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::prefix('car-images')->name('car-images.')->group(function () {
         Route::post('/', [CarImageController::class, 'store'])->name('store');
         Route::delete('/{carImage}', [CarImageController::class, 'destroy'])->name('delete');
+    });
+
+    Route::prefix('bookings')->name('bookings.')->group(function() {
+        Route::get('/', [BookingController::class, 'index'])->name('index');
     });
 });
 
