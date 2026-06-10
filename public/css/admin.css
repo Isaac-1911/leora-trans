@@ -40,6 +40,11 @@ body {
     z-index: 1000;
 }
 
+.sidebar-link.active{
+    background:#1a1a1a;
+    border-left:4px solid #1c69d4;
+}
+
 /* WRAPPER KONTEN */
 
 .main-wrapper {

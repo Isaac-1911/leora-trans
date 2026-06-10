@@ -20,33 +20,39 @@
 
     <nav class="py-6">
 
-        <a href="#"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+        <a href="{{ route('admin.dashboard') }}"
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             Dashboard
         </a>
 
         <a href="{{ route('admin.cars.index') }}"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider bg-[#1a1a1a] border-l-4 border-[#1c69d4]">
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.cars.*') ? 'active' : '' }}">
             Cars
         </a>
 
         <a href="#"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.bookings.*') ? 'active' : '' }}">
             Bookings
         </a>
 
         <a href="#"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.payments.*') ? 'active' : '' }}">
             Payments
         </a>
 
         <a href="#"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
             Reports
         </a>
 
         <a href="#"
-           class="flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
+       {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
             Settings
         </a>
 
