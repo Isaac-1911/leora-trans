@@ -37,9 +37,19 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::delete('/{carImage}', [CarImageController::class, 'destroy'])->name('delete');
     });
 
-    Route::prefix('bookings')->name('bookings.')->group(function() {
-        Route::get('/', [BookingController::class, 'index'])->name('index');
-        Route::post('/', [BookingController::class, 'store'])->name('store');
+    Route::prefix('bookings')->name('bookings.')->group(function () {
+
+        Route::get('/', [BookingController::class, 'index'])
+            ->name('index');
+
+        Route::post('/', [BookingController::class, 'store'])
+            ->name('store');
+
+        Route::put('/{booking}', [BookingController::class, 'update'])
+            ->name('update');
+
+        Route::delete('/{booking}', [BookingController::class, 'destroy'])
+            ->name('destroy');
     });
 });
 

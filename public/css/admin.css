@@ -1620,3 +1620,120 @@ body {
 
     color-scheme:dark;
 }
+
+/* Booking detail modal */
+
+.detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:16px;
+
+    margin-top:20px;
+}
+
+.detail-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+.detail-label{
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    color:#888;
+
+    text-transform:uppercase;
+}
+
+.detail-value{
+
+    font-size:13px;
+
+    color:#fff;
+
+    font-weight:500;
+}
+
+.detail-full{
+
+    margin-top:18px;
+}
+
+.detail-full p{
+
+    margin-top:8px;
+
+    color:#fff;
+
+    line-height:1.6;
+
+    font-size:13px;
+}
+
+/* Booking Delete Modal */
+
+.modal-sm{
+
+    max-width:420px;
+}
+
+.delete-content{
+
+    padding:20px 0;
+
+    text-align:center;
+}
+
+.delete-content h3{
+
+    margin-top:12px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+.delete-warning{
+
+    margin-top:12px;
+
+    color:#888;
+
+    font-size:12px;
+}
+
+.btn-danger{
+
+    height:40px;
+
+    padding:0 18px;
+
+    border:none;
+
+    background:#e22718;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+}
+
+.btn-danger:hover{
+
+    opacity:.9;
+}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBookingRequest;
+use App\Http\Requests\UpdateBookingRequest;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Car;
@@ -132,16 +133,57 @@ class BookingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(
+        UpdateBookingRequest $request,
+        Booking $booking
+    ) {
+        $data = $request->validated();
+
+        $car = Car::findOrFail(
+            $data['car_id']
+        );
+
+        $startDate = Carbon::parse(
+            $data['start_date']
+        );
+
+        $endDate = Carbon::parse(
+            $data['end_date']
+        );
+
+        $data['total_days'] =
+            max(
+                1,
+                $startDate->diffInDays($endDate)
+            );
+
+        $data['price_per_day'] =
+            $car->price_per_day;
+
+        $data['total_price'] =
+            $data['total_days']
+            *
+            $data['price_per_day'];
+
+        $booking->update($data);
+
+        return back()->with(
+            'success',
+            'Booking Updated!'
+        );
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(
+        Booking $booking
+    ) {
+        $booking->delete();
+
+        return back()->with(
+            'success',
+            'Booking Deleted!'
+        );
     }
 }
