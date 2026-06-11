@@ -4,253 +4,241 @@
 
 @section('content')
 
-<div class="page-header">
+    <div class="cars-header">
 
-    <div class="title-strip"></div>
+        <div class="cars-title-wrapper">
 
-    <div>
+            <div class="m-stripe-vertical">
+                <span class="blue-light"></span>
+                <span class="blue-dark"></span>
+                <span class="red"></span>
+            </div>
 
-        <h1 class="page-title">
-            BOOKINGS MANAGEMENT
-        </h1>
+            <div>
+                <h1 class="cars-title">
+                    BOOKING MANAGEMENT
+                </h1>
 
-        <p class="page-subtitle">
-            Track and manage all reservations
-        </p>
+                <p class="cars-subtitle">
+                    Track and manage all reservations
+                </p>
+            </div>
+
+        </div>
+
+        <button class="add-car-btn" id="openAddCarModal">
+            + ADD BOOKING
+        </button>
 
     </div>
 
-</div>
+    <div class="booking-filter-card">
 
-<div class="booking-filter-card">
+        <form method="GET" class="booking-filter">
 
-    <form method="GET"
-          class="booking-filter">
+            <button class="{{ request('status') == null ? 'active' : '' }}" name="status" value="">
 
-        <button
-            class="{{ request('status') == null ? 'active' : '' }}"
-            name="status"
-            value="">
+                ALL
 
-            ALL
+            </button>
 
-        </button>
+            <button class="{{ request('status') == 'confirmed' ? 'active' : '' }}" name="status" value="confirmed">
 
-        <button
-            class="{{ request('status') == 'confirmed' ? 'active' : '' }}"
-            name="status"
-            value="confirmed">
+                CONFIRMED
 
-            CONFIRMED
+            </button>
 
-        </button>
+            <button class="{{ request('status') == 'ongoing' ? 'active' : '' }}" name="status" value="ongoing">
 
-        <button
-            class="{{ request('status') == 'ongoing' ? 'active' : '' }}"
-            name="status"
-            value="ongoing">
+                ONGOING
 
-            ONGOING
+            </button>
 
-        </button>
+            <button class="{{ request('status') == 'completed' ? 'active' : '' }}" name="status" value="completed">
 
-        <button
-            class="{{ request('status') == 'completed' ? 'active' : '' }}"
-            name="status"
-            value="completed">
+                COMPLETED
 
-            COMPLETED
+            </button>
 
-        </button>
+            <button class="{{ request('status') == 'cancelled' ? 'active' : '' }}" name="status" value="cancelled">
 
-        <button
-            class="{{ request('status') == 'cancelled' ? 'active' : '' }}"
-            name="status"
-            value="cancelled">
+                CANCELLED
 
-            CANCELLED
+            </button>
 
-        </button>
+        </form>
 
-    </form>
 
-</div>
+    </div>
 
-<div class="booking-table-card">
 
-    <table class="booking-table">
 
-        <thead>
+    <div class="booking-table-card">
 
-        <tr>
+        <table class="booking-table">
 
-            <th>BOOKING CODE</th>
-            <th>CUSTOMER</th>
-            <th>VEHICLE</th>
-            <th>RENTAL PERIOD</th>
-            <th>TOTAL</th>
-            <th>PAYMENT</th>
-            <th>STATUS</th>
-            <th>ACTIONS</th>
+            <thead>
 
-        </tr>
+                <tr>
 
-        </thead>
+                    <th>BOOKING CODE</th>
+                    <th>CUSTOMER</th>
+                    <th>VEHICLE</th>
+                    <th>RENTAL PERIOD</th>
+                    <th>TOTAL</th>
+                    <th>PAYMENT</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
 
-        <tbody>
+                </tr>
 
-        @forelse($bookings as $booking)
+            </thead>
 
-            <tr>
+            <tbody>
 
-                <td>
-                    {{ $booking->booking_code }}
-                </td>
+                @forelse($bookings as $booking)
+                    <tr>
 
-                <td>
+                        <td>
+                            {{ $booking->booking_code }}
+                        </td>
 
-                    <span class="customer-name">
-                        {{ $booking->customer_name }}
-                    </span>
+                        <td>
 
-                    <span class="customer-phone">
-                        {{ $booking->customer_phone }}
-                    </span>
-
-                </td>
-
-                <td>
-
-                    {{ $booking->car->name }}
-
-                </td>
-
-                <td>
-
-                    <span class="rental-date">
-
-                        {{ \Carbon\Carbon::parse($booking->start_date)->format('Y-m-d') }}
-                        -
-
-                        {{ \Carbon\Carbon::parse($booking->end_date)->format('Y-m-d') }}
-
-                    </span>
-
-                    <span class="rental-days">
-
-                        {{ $booking->total_days }}
-                        Days
-
-                    </span>
-
-                </td>
-
-                <td>
-
-                    Rp {{ number_format($booking->total_price,0,',','.') }}
-
-                </td>
-
-                <td>
-
-                    @if($booking->payment_status == 'paid')
-
-                        <span class="badge badge-green">
-                            PAID
-                        </span>
-
-                    @elseif($booking->payment_status == 'pending')
-
-                        <span class="badge badge-yellow">
-                            PENDING
-                        </span>
-
-                    @else
-
-                        <span class="badge badge-red">
-                            REJECTED
-                        </span>
-
-                    @endif
-
-                </td>
-
-                <td>
-
-                    @switch($booking->booking_status)
-
-                        @case('confirmed')
-
-                            <span class="badge badge-green">
-                                CONFIRMED
+                            <span class="customer-name">
+                                {{ $booking->customer_name }}
                             </span>
 
-                        @break
-
-                        @case('ongoing')
-
-                            <span class="badge badge-blue">
-                                ONGOING
+                            <span class="customer-phone">
+                                {{ $booking->customer_phone }}
                             </span>
 
-                        @break
+                        </td>
 
-                        @case('completed')
+                        <td>
 
-                            <span class="badge badge-gray">
-                                COMPLETED
+                            {{ $booking->car->name }}
+
+                        </td>
+
+                        <td>
+
+                            <span class="rental-date">
+
+                                {{ \Carbon\Carbon::parse($booking->start_date)->format('Y-m-d') }}
+                                -
+
+                                {{ \Carbon\Carbon::parse($booking->end_date)->format('Y-m-d') }}
+
                             </span>
 
-                        @break
+                            <span class="rental-days">
 
-                        @case('cancelled')
+                                {{ $booking->total_days }}
+                                Days
 
-                            <span class="badge badge-red">
-                                CANCELLED
                             </span>
 
-                        @break
+                        </td>
 
-                        @default
+                        <td>
 
-                            <span class="badge badge-yellow">
-                                WAITING
-                            </span>
+                            Rp {{ number_format($booking->total_price, 0, ',', '.') }}
 
-                    @endswitch
+                        </td>
 
-                </td>
+                        <td>
 
-                <td>
+                            @if ($booking->payment_status == 'paid')
+                                <span class="badge badge-green">
+                                    PAID
+                                </span>
+                            @elseif($booking->payment_status == 'pending')
+                                <span class="badge badge-yellow">
+                                    PENDING
+                                </span>
+                            @else
+                                <span class="badge badge-red">
+                                    REJECTED
+                                </span>
+                            @endif
 
-                    <button class="btn-view">
+                        </td>
 
-                        👁
+                        <td>
 
-                    </button>
+                            @switch($booking->booking_status)
+                                @case('confirmed')
+                                    <span class="badge badge-green">
+                                        CONFIRMED
+                                    </span>
+                                @break
 
-                </td>
+                                @case('ongoing')
+                                    <span class="badge badge-blue">
+                                        ONGOING
+                                    </span>
+                                @break
 
-            </tr>
+                                @case('completed')
+                                    <span class="badge badge-gray">
+                                        COMPLETED
+                                    </span>
+                                @break
 
-        @empty
+                                @case('cancelled')
+                                    <span class="badge badge-red">
+                                        CANCELLED
+                                    </span>
+                                @break
 
-            <tr>
+                                @default
+                                    <span class="badge badge-yellow">
+                                        WAITING
+                                    </span>
+                            @endswitch
 
-                <td colspan="8">
+                        </td>
 
-                    No bookings found.
+                        <td>
 
-                </td>
+                            <div class="booking-actions">
 
-            </tr>
+                                <button class="btn-action btn-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
 
-        @endforelse
+                                <button class="btn-action btn-edit">
+                                    <i class="fas fa-pen"></i>
+                                </button>
 
-        </tbody>
+                                <button class="btn-action btn-delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
 
-    </table>
+                            </div>
 
-</div>
+                        </td>
 
-@endsection
+                    </tr>
+
+                    @empty
+
+                        <tr>
+
+                            <td colspan="8">
+
+                                No bookings found.
+
+                            </td>
+
+                        </tr>
+                    @endforelse
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    @endsection

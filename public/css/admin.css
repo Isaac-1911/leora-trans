@@ -1555,3 +1555,57 @@ body {
 
     font-size:12px;
 }
+
+/* Booking Action */
+
+.booking-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+}
+
+.btn-action{
+
+    width:32px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-action:hover{
+
+    background:#1a1a1a;
+}
+
+.btn-view:hover{
+
+    border-color:#1c69d4;
+}
+
+.btn-edit:hover{
+
+    border-color:#0fa336;
+}
+
+.btn-delete:hover{
+
+    border-color:#e22718;
+}
