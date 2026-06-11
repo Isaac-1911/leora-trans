@@ -1609,3 +1609,14 @@ body {
 
     border-color:#e22718;
 }
+
+.form-group input[type="date"]{
+
+    background:#111;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    color-scheme:dark;
+}

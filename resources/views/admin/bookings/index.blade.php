@@ -26,7 +26,7 @@
 
         </div>
 
-        <button class="add-car-btn" id="openAddCarModal">
+        <button class="add-car-btn" id="openAddBookingModal">
             + ADD BOOKING
         </button>
 
@@ -241,4 +241,188 @@
 
         </div>
 
+        <div id="addBookingModal" class="modal-overlay">
+
+            <div class="modal-container">
+
+                <div class="modal-header">
+                    <button id="closeAddBookingModal">
+                        ×
+                    </button>
+
+                    <h2>
+                        ADD NEW BOOKING
+                    </h2>
+
+
+                </div>
+
+                <form action="{{ route('admin.bookings.store') }}" method="POST">
+
+                    @csrf
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                CUSTOMER NAME
+                            </label>
+
+                            <input type="text" name="customer_name" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                PHONE NUMBER
+                            </label>
+
+                            <input type="text" name="customer_phone" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                VEHICLE
+                            </label>
+
+                            <select name="car_id" required>
+
+                                <option value="">
+                                    Select Vehicle
+                                </option>
+
+                                @foreach ($cars as $car)
+                                    <option value="{{ $car->id }}">
+                                        {{ $car->name }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                PAYMENT TYPE
+                            </label>
+
+                            <select name="payment_type">
+
+                                <option value="dp">
+                                    DP
+                                </option>
+
+                                <option value="full">
+                                    Full
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                START DATE
+                            </label>
+
+                            <input type="date" name="start_date" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                END DATE
+                            </label>
+
+                            <input type="date" name="end_date" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            CUSTOMER ADDRESS
+                        </label>
+
+                        <textarea name="customer_address" rows="3"></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            NOTES
+                        </label>
+
+                        <textarea name="notes" rows="4"></textarea>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn-save">
+
+                            ADD BOOKING
+
+                        </button>
+
+                        <button type="button" id="closeAddBookingModal2" class="btn-cancel">
+
+                            CANCEL
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
     @endsection
+
+    @push('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const bookingModal =
+                    document.getElementById('addBookingModal');
+
+                document
+                    .getElementById('openAddBookingModal')
+                    .addEventListener('click', () => {
+
+                        bookingModal.classList.add('show');
+
+                    });
+
+                document
+                    .getElementById('closeAddBookingModal')
+                    .addEventListener('click', () => {
+
+                        bookingModal.classList.remove('show');
+
+                    });
+
+                document
+                    .getElementById('closeAddBookingModal2')
+                    .addEventListener('click', () => {
+
+                        bookingModal.classList.remove('show');
+
+                    });
+
+            });
+
+        </script>
+    @endpush
