@@ -14,7 +14,8 @@ class Payment extends Model
         'payment_date',
         'proof_image',
         'status',
-        'verified_by'
+        'verified_by',
+        'payment_code'
     ];
 
     public function booking(){

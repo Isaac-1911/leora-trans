@@ -1737,3 +1737,114 @@ body {
 
     opacity:.9;
 }
+
+/* Payments page */
+/* PAYMENT PAGE */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:6px;
+
+    justify-content:center;
+}
+
+.btn-action{
+
+    width:30px;
+
+    height:30px;
+
+    border:1px solid #3c3c3c;
+
+    background:transparent;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:11px;
+}
+
+.btn-action:hover{
+
+    background:#1a1a1a;
+}
+
+.status-badge{
+
+    display:inline-block;
+
+    padding:4px 10px;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    border:1px solid;
+}
+
+.status-badge.pending{
+
+    color:#ffc400;
+
+    border-color:#ffc400;
+}
+
+.status-badge.approved{
+
+    color:#00ff7f;
+
+    border-color:#00ff7f;
+}
+
+.status-badge.rejected{
+
+    color:#ff3b3b;
+
+    border-color:#ff3b3b;
+}
+
+#paymentUploadBox{
+
+    height:180px;
+
+    border:1px dashed #3c3c3c;
+
+    background:#111;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    overflow:hidden;
+}
+
+#paymentUploadBox img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+#paymentUploadContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#888;
+
+    font-size:12px;
+}
