@@ -228,7 +228,8 @@
                                     data-payment-type="{{ $booking->payment_type }}"
                                     data-payment-status="{{ $booking->payment_status }}"
                                     data-booking-status="{{ $booking->booking_status }}"
-                                    data-notes="{{ $booking->notes }}">
+                                    data-notes="{{ $booking->notes }}" data-debug="{{ $booking->booking_status }}">
+
 
                                     <i class="fa-solid fa-pen"></i>
 
@@ -659,7 +660,7 @@
 
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
 
                             <label>
                                 PAYMENT STATUS
@@ -681,7 +682,7 @@
 
                             </select>
 
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
 
@@ -883,16 +884,6 @@
 
                     button.addEventListener('click', () => {
 
-                        document.getElementById(
-                                'editPaymentStatus'
-                            ).value =
-                            button.dataset.paymentStatus;
-
-                        document.getElementById(
-                                'editBookingStatus'
-                            ).value =
-                            button.dataset.bookingStatus;
-
                         document.getElementById('detailCode').textContent =
                             button.dataset.code;
 
@@ -1005,6 +996,15 @@
                                 'editPaymentType'
                             ).value =
                             button.dataset.paymentType;
+
+                        document.getElementById(
+                                'editBookingStatus'
+                            ).value =
+                            button.dataset.bookingStatus;
+
+                        console.log(
+                            button.dataset.bookingStatus
+                        );
 
                         document.getElementById(
                                 'editNotes'

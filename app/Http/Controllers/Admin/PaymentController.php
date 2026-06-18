@@ -197,6 +197,12 @@ class PaymentController extends Controller
                 );
         }
 
+        $payment->booking->update([
+
+            'payment_status' => 'pending'
+
+        ]);
+
         $payment->delete();
 
         return back()->with(

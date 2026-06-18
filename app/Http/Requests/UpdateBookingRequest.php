@@ -30,10 +30,10 @@ class UpdateBookingRequest extends FormRequest
             'start_date' => 'required',
             'end_date' => 'required',
             'notes' => 'nullable',
-            'payment_status' => [
-                'required',
-                'in:pending,paid,rejected'
-            ],
+            // 'payment_status' => [
+            //     'required',
+            //     'in:pending,paid,rejected'
+            // ],
 
             'booking_status' => [
                 'required',
