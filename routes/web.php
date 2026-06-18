@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
+    Route::get('/', fn() => redirect('admin.dashboard'));
+
     Route::get(
         '/dashboard',
         [DashboardController::class, 'index']
