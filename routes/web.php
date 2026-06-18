@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarImageController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('layouts.admin');
-    })->name('dashboard');
+    Route::get(
+        '/dashboard',
+        [DashboardController::class, 'index']
+    )->name('dashboard');
 
     Route::prefix('cars')->name('cars.')->group(function () {
         Route::get('/', [CarController::class, 'index'])->name('index');

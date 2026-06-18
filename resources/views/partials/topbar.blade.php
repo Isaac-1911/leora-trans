@@ -13,16 +13,37 @@
                    focus:border-white"> --}}
     </div>
 
-    <div class="flex items-center gap-6">
+    <div class="header-actions">
 
-        <button>
-            Notification
+    <button>
+        Notification
+    </button>
+
+    <div class="profile-dropdown">
+
+        <button
+            id="profileDropdownBtn"
+            class="profile-avatar">
+
+            {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+
         </button>
 
-        <div class="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center border border-[#3c3c3c]">
-            A
+        <div
+            id="profileDropdownMenu"
+            class="dropdown-menu">
+
+            <button
+                id="openLogoutModal">
+
+                Logout
+
+            </button>
+
         </div>
 
     </div>
+
+</div>
 
 </header>

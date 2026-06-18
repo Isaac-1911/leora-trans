@@ -139,7 +139,7 @@
 
                         <td>
 
-                            <div class="action-buttons">
+                            <div class="action-buttons actions-column">
 
                                 <button class="btn-action btn-view" data-code="{{ $payment->payment_code }}"
                                     data-booking="{{ $payment->booking->booking_code }}"
