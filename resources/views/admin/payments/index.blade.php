@@ -511,8 +511,7 @@
                             PAYMENT DATE
                         </label>
 
-                        <input type="date" id="editPaymentDate" name="payment_date" required
-                            value="{{ old($payment->payment_date) }}">
+                        <input type="date" id="editPaymentDate" name="payment_date" required>
 
                     </div>
 
