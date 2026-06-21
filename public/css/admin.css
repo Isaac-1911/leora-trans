@@ -45,6 +45,21 @@ body {
     border-left:4px solid #1c69d4;
 }
 
+.sidebar-link i{
+
+    width:18px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    color:#d0d0d0;
+}
+
+.sidebar-link.active i{
+
+    color:#ffffff;
+}
 /* WRAPPER KONTEN */
 
 .main-wrapper {

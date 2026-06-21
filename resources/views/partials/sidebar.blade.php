@@ -22,38 +22,61 @@
 
         <a href="{{ route('admin.dashboard') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-            Dashboard
+        {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+
+            <i class="fa-solid fa-table-columns"></i>
+
+            <span>DASHBOARD</span>
+
         </a>
 
         <a href="{{ route('admin.cars.index') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.cars.*') ? 'active' : '' }}">
-            Cars
+        {{ request()->routeIs('admin.cars.*') ? 'active' : '' }}">
+
+            <i class="fa-solid fa-car-side"></i>
+
+            <span>CARS</span>
+
         </a>
 
         <a href="{{ route('admin.bookings.index') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.bookings.*') ? 'active' : '' }}">
-            Bookings
+        {{ request()->routeIs('admin.bookings.*') ? 'active' : '' }}">
+
+            <i class="fa-regular fa-calendar-check"></i>
+
+            <span>BOOKINGS</span>
+
         </a>
 
         <a href="{{ route('admin.payments.index') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.payments.*') ? 'active' : '' }}">
-            Payments
+        {{ request()->routeIs('admin.payments.*') ? 'active' : '' }}">
+
+            <i class="fa-regular fa-credit-card"></i>
+
+            <span>PAYMENTS</span>
+
         </a>
 
         <a href="{{ route('admin.reports.index') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
-            Reports
+        {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <span>REPORTS</span>
+
         </a>
 
         {{-- <a href="#"
-            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
-       {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
-            Settings
+            class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>SETTINGS</span>
+
         </a> --}}
 
     </nav>
