@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarImageController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,10 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
         Route::delete('/{payment}', [PaymentController::class, 'destroy'])
             ->name('destroy');
+    });
+
+    Route::prefix('reports')->name('reports.')->group(function () {
+        Route::get('/', [ReportController::class, 'index'])->name('index');
     });
 });
 

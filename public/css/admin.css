@@ -2241,3 +2241,234 @@ body {
 
     background:#222;
 }
+
+/* Reports Page */
+/* ====================================
+   REPORTS
+==================================== */
+
+.report-filter-card{
+
+    background:linear-gradient(
+        90deg,
+        #181818,
+        #1b1b1b
+    );
+
+    border:1px solid #2d2d2d;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.report-filter-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    font-size:13px;
+}
+
+.report-filter-right{
+
+    display:flex;
+
+    gap:8px;
+}
+
+.report-filter-btn{
+
+    background:transparent;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    font-size:11px;
+
+    letter-spacing:.5px;
+
+    padding:10px 16px;
+
+    cursor:pointer;
+}
+
+.report-filter-btn.active{
+
+    background:#fff;
+
+    color:#000;
+}
+
+/* KPI */
+
+.report-stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.report-stat-card{
+
+    background:linear-gradient(
+        90deg,
+        #181818,
+        #1b1b1b
+    );
+
+    border:1px solid #2d2d2d;
+
+    padding:18px;
+}
+
+.report-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border:1px solid #333;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:14px;
+
+    font-size:18px;
+}
+
+.report-stat-label{
+
+    color:#8f8f8f;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+}
+
+.report-stat-value{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:6px;
+}
+
+.report-stat-sub{
+
+    color:#8f8f8f;
+
+    font-size:12px;
+}
+
+/* CHARTS */
+
+.report-chart-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.report-card{
+
+    background:linear-gradient(
+        90deg,
+        #181818,
+        #1b1b1b
+    );
+
+    border:1px solid #2d2d2d;
+
+    padding:20px;
+
+    margin-bottom:20px;
+}
+
+.report-card h3{
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+#revenueTrendChart,
+#bookingTrendChart{
+
+    height:300px !important;
+}
+
+/* TABLE */
+
+.report-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.report-table th{
+
+    text-align:left;
+
+    color:#8f8f8f;
+
+    font-size:11px;
+
+    font-weight:500;
+
+    letter-spacing:1px;
+
+    padding:14px 16px;
+
+    border-bottom:1px solid #2d2d2d;
+}
+
+.report-table td{
+
+    padding:18px 16px;
+
+    color:#fff;
+
+    font-size:13px;
+
+    border-bottom:1px solid #2d2d2d;
+}
+
+.report-table tbody tr:hover{
+
+    background:#161616;
+}

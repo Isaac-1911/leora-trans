@@ -44,13 +44,13 @@
             Payments
         </a>
 
-        {{-- <a href="#"
+        <a href="{{ route('admin.reports.index') }}"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
        {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
             Reports
         </a>
 
-        <a href="#"
+        {{-- <a href="#"
             class="sidebar-link flex items-center gap-3 px-6 py-4 text-sm uppercase tracking-wider hover:bg-[#1a1a1a]
        {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
             Settings
