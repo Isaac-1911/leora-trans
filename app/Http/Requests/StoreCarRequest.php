@@ -31,7 +31,8 @@ class StoreCarRequest extends FormRequest
         'price_per_day' => ['required','numeric'],
         'status' => ['required'],
         'thumbnail' => ['nullable','image'],
-        'description' => ['nullable']
+        'description' => ['nullable'],
+        'car_location_link' => 'nullable'
     ];
 
 

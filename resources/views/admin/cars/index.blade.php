@@ -37,9 +37,7 @@
     <form method="GET" action="{{ route('admin.cars.index') }}" class="action-bar">
 
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search vehicles..."
-            class="search-input"
-            {{-- oninput="this.form.submit()" --}}
-            >
+            class="search-input" {{-- oninput="this.form.submit()" --}}>
 
         <select name="brand" class="filter-select">
 
@@ -83,7 +81,12 @@
     <div class="cars-grid">
 
         @foreach ($cars as $car)
-            <div class="car-card">
+            <div class="car-card car-detail-trigger" data-name="{{ $car->name }}" data-brand="{{ $car->brand }}"
+                data-year="{{ $car->year }}" data-plate="{{ $car->plate_number }}"
+                data-price="{{ number_format($car->price_per_day, 0, ',', '.') }}"
+                data-status="{{ strtoupper($car->status) }}" data-description="{{ $car->description }}"
+                data-thumbnail="{{ asset('storage/' . $car->thumbnail) }}"
+                data-location-link="{{ $car->car_location_link }}">
 
                 <div class="car-image-wrapper">
 
@@ -135,7 +138,8 @@
                             data-year="{{ $car->year }}" data-plate="{{ $car->plate_number }}"
                             data-price="{{ $car->price_per_day }}" data-status="{{ $car->status }}"
                             data-description="{{ $car->description }}"
-                            data-thumbnail="{{ asset('storage/' . $car->thumbnail) }}">
+                            data-thumbnail="{{ asset('storage/' . $car->thumbnail) }}"
+                            data-location-link="{{ $car->car_location_link }}">
 
                             EDIT
 
@@ -194,6 +198,18 @@
                         <label>PLATE NUMBER</label>
                         <input type="text" name="plate_number">
                     </div>
+
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        LOCATION LINK
+                    </label>
+
+                    <input type="url" name="car_location_link" placeholder="https://maps.google.com/...">
 
                 </div>
 
@@ -381,6 +397,18 @@
 
                     </div>
 
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        LOCATION LINK
+                    </label>
+
+                    <input type="url" id="editLocationLink" name="car_location_link">
+
                 </div>
 
                 <div class="form-group full-width">
@@ -447,6 +475,138 @@
                 </div>
 
             </form>
+
+        </div>
+
+    </div>
+
+    <div id="carDetailModal" class="modal-overlay">
+
+        <div class="modal-container">
+
+            <div class="modal-header">
+
+                <h2>
+                    VEHICLE DETAILS
+                </h2>
+
+                <button id="closeCarDetailModal">
+                    ×
+                </button>
+
+            </div>
+
+            <img id="detailThumbnail" class="detail-car-thumbnail">
+
+            <div class="detail-grid">
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        VEHICLE NAME
+                    </span>
+
+                    <span id="detailName" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        BRAND
+                    </span>
+
+                    <span id="detailBrand" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        YEAR
+                    </span>
+
+                    <span id="detailYear" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        PLATE NUMBER
+                    </span>
+
+                    <span id="detailPlate" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        PRICE / DAY
+                    </span>
+
+                    <span id="detailPrice" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        STATUS
+                    </span>
+
+                    <span id="detailStatus" class="detail-value">
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="detail-full">
+
+                {{-- <span class="detail-label">
+
+                    GOOGLE MAPS
+
+                </span> --}}
+
+                <a id="detailLocationLink" target="_blank" class="btn-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    OPEN LOCATION
+
+                </a>
+
+            </div>
+
+            <div class="detail-full">
+
+                <span class="detail-label">
+
+                    DESCRIPTION
+
+                </span>
+
+                <p id="detailDescription"></p>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" id="closeCarDetailModal2" class="btn-cancel">
+
+                    CLOSE
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -625,6 +785,11 @@
                     document.getElementById('editDescription').value =
                         button.dataset.description;
 
+                    document.getElementById(
+                            'editLocationLink'
+                        ).value =
+                        button.dataset.locationLink;
+
                     const preview =
                         document.getElementById('editImagePreview');
 
@@ -686,5 +851,102 @@
             reader.readAsDataURL(file);
 
         });
+
+        const carDetailModal =
+            document.getElementById(
+                'carDetailModal'
+            );
+
+        document
+            .querySelectorAll(
+                '.car-detail-trigger'
+            )
+            .forEach(card => {
+
+                card.addEventListener(
+                    'click',
+                    () => {
+
+                        document.getElementById(
+                                'detailThumbnail'
+                            ).src =
+                            card.dataset.thumbnail;
+
+                        document.getElementById(
+                                'detailName'
+                            ).textContent =
+                            card.dataset.name;
+
+                        document.getElementById(
+                                'detailBrand'
+                            ).textContent =
+                            card.dataset.brand;
+
+                        document.getElementById(
+                                'detailYear'
+                            ).textContent =
+                            card.dataset.year;
+
+                        document.getElementById(
+                                'detailPlate'
+                            ).textContent =
+                            card.dataset.plate;
+
+                        document.getElementById(
+                                'detailPrice'
+                            ).textContent =
+                            'Rp ' +
+                            card.dataset.price;
+
+                        document.getElementById(
+                                'detailStatus'
+                            ).textContent =
+                            card.dataset.status;
+
+                        document.getElementById(
+                                'detailDescription'
+                            ).textContent =
+                            card.dataset.description;
+
+                        document.getElementById(
+                                'detailLocationLink'
+                            ).href =
+                            card.dataset.locationLink;
+
+                        carDetailModal.classList.add(
+                            'show'
+                        );
+
+                    });
+
+            });
+
+        document
+            .getElementById(
+                'closeCarDetailModal'
+            )
+            .addEventListener(
+                'click',
+                () => {
+
+                    carDetailModal.classList.remove(
+                        'show'
+                    );
+
+                });
+
+        document
+            .getElementById(
+                'closeCarDetailModal2'
+            )
+            .addEventListener(
+                'click',
+                () => {
+
+                    carDetailModal.classList.remove(
+                        'show'
+                    );
+
+                });
     </script>
 @endpush

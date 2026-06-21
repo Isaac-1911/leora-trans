@@ -16,7 +16,8 @@ class Car extends Model
         'price_per_day',
         'status',
         'description',
-        'thumbnail'
+        'thumbnail',
+        'car_location_link'
     ];
 
     public function images(){
