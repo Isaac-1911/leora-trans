@@ -321,10 +321,12 @@
                                     Select Vehicle
                                 </option>
 
-                                @foreach ($cars as $car)
-                                    <option value="{{ $car->id }}">
-                                        {{ $car->name }}
-                                    </option>
+                                @foreach ($allCars as $car)
+                                    @if ($car->status === 'available')
+                                        <option value="{{ $car->id }}">
+                                            {{ $car->name }}
+                                        </option>
+                                    @endif
                                 @endforeach
 
                             </select>
@@ -630,7 +632,7 @@
 
                             <select id="editCarId" name="car_id" required>
 
-                                @foreach ($cars as $car)
+                                @foreach ($allCars as $car)
                                     <option value="{{ $car->id }}">
                                         {{ $car->name }}
                                     </option>
@@ -659,30 +661,6 @@
                             </select>
 
                         </div>
-
-                        {{-- <div class="form-group">
-
-                            <label>
-                                PAYMENT STATUS
-                            </label>
-
-                            <select id="editPaymentStatus" name="payment_status">
-
-                                <option value="pending">
-                                    Pending
-                                </option>
-
-                                <option value="paid">
-                                    Paid
-                                </option>
-
-                                <option value="rejected">
-                                    Rejected
-                                </option>
-
-                            </select>
-
-                        </div> --}}
 
                         <div class="form-group">
 

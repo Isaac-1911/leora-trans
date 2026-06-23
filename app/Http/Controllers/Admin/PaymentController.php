@@ -27,8 +27,9 @@ class PaymentController extends Controller
             ->latest()
             ->get();
 
-        $bookings = Booking::orderBy(
-            'booking_code'
+        $bookings = Booking::where(
+            'payment_status',
+            'pending'
         )->get();
 
         return view(
@@ -113,6 +114,12 @@ class PaymentController extends Controller
                 'rejected' => 'rejected',
 
                 default => 'pending'
+            },
+
+            'booking_status' => match ($data['status']) {
+                'approved' => 'confirmed',
+                'rejected' => 'rejected',
+                default => 'confirmed'
             }
 
         ]);

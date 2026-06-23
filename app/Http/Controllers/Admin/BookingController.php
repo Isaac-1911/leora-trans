@@ -15,19 +15,73 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $query = Booking::with('car');
+        $query = Booking::with(
+            'car'
+        );
 
-        $cars = Car::all();
+        if (
+            request('status')
+        ) {
 
-        if ($request->filled('status')) {
-            $query->where('booking_status', $request->status);
+            $query->where(
+                'booking_status',
+                request('status')
+            );
         }
 
-        $bookings = $query->latest()->paginate(10)->withQueryString();
+        $bookings =
+            $query
+            ->latest()
+            ->get();
 
-        return view('admin.bookings.index', compact('bookings', 'cars'));
+        /*
+    |--------------------------------------------------------------------------
+    | ADD BOOKING
+    |--------------------------------------------------------------------------
+    */
+
+        $availableCars =
+            Car::where(
+                'status',
+                'available'
+            )
+            ->whereDoesntHave(
+                'bookings',
+                function ($query) {
+
+                    $query->whereIn(
+                        'booking_status',
+                        [
+                            'confirmed',
+                            'ongoing'
+                        ]
+                    );
+                }
+            )
+            ->get();
+
+        /*
+    |--------------------------------------------------------------------------
+    | EDIT BOOKING
+    |--------------------------------------------------------------------------
+    */
+
+        $allCars =
+            Car::orderBy(
+                'name'
+            )
+            ->get();
+
+        return view(
+            'admin.bookings.index',
+            compact(
+                'bookings',
+                'availableCars',
+                'allCars'
+            )
+        );
     }
 
     /**
@@ -137,6 +191,9 @@ class BookingController extends Controller
         UpdateBookingRequest $request,
         Booking $booking
     ) {
+
+        $oldCar = $booking->car;
+
         $data = $request->validated();
 
         $car = Car::findOrFail(
@@ -166,6 +223,44 @@ class BookingController extends Controller
             $data['price_per_day'];
 
         $booking->update($data);
+
+        if (
+            in_array(
+                $booking->booking_status,
+                [
+                    'confirmed',
+                    'ongoing'
+                ]
+            )
+        ) {
+
+            $car->update([
+                'status' => 'rented'
+            ]);
+        } elseif (
+            in_array(
+                $booking->booking_status,
+                [
+                    'completed',
+                    'cancelled'
+                ]
+            )
+        ) {
+
+            $car->update([
+                'status' => 'available'
+            ]);
+        }
+
+        if (
+            $oldCar &&
+            $oldCar->id !== $car->id
+        ) {
+
+            $oldCar->update([
+                'status' => 'available'
+            ]);
+        }
 
         return back()->with(
             'success',
