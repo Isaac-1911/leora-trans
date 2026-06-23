@@ -1,0 +1,96 @@
+:root {
+
+    /* Surface */
+    --canvas: #000000;
+    --surface-soft: #0d0d0d;
+    --surface: #1a1a1a;
+    --surface-elevated: #262626;
+
+    /* Border */
+    --border: #3c3c3c;
+
+    /* Text */
+    --text: #ffffff;
+    --text-secondary: #bbbbbb;
+    --text-muted: #7e7e7e;
+
+    /* BMW M Colors */
+    --m-blue-light: #0066b1;
+    --m-blue-dark: #1c69d4;
+    --m-red: #e22718;
+
+    /* Status */
+    --success: #0fa336;
+    --warning: #f4b400;
+
+    /* Layout */
+    --container: 1440px;
+
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+    --space-xxl: 64px;
+    --section-space: 96px;
+
+    /* Navbar */
+    --navbar-height: 80px;
+
+    /* Hero */
+    --hero-overlay: rgba(0, 0, 0, 0.65);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--canvas);
+    color:var(--text);
+    overflow-x:hidden;
+    font-family:'Inter', sans-serif;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+.container{
+    width:100%;
+    max-width:var(--container);
+    margin:auto;
+    padding-inline:32px;
+}
+
+.logo-title{
+    font-size:32px;
+    font-weight:700;
+    text-transform:uppercase;
+    line-height:1;
+}
+
+.hero-title{
+    font-size:80px;
+    font-weight:700;
+    line-height:1;
+    text-transform:uppercase;
+}
