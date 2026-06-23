@@ -13,7 +13,7 @@ class CarImage extends Model
         'image'
     ];
 
-    public function cars(){
+    public function car(){
         return $this->belongsTo(Car::class);
     }
 }
