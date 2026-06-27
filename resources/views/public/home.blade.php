@@ -6,4 +6,6 @@
 
     @include('public.partials.hero')
 
+    @include('public.partials.featured-vehicles')
+
 @endsection
