@@ -40,7 +40,7 @@
                             <span>/day</span>
                         </p>
 
-                        <a href="#" class="vehicle-detail-btn">
+                        <a href="{{ route('vehicles.show', $car) }}" class="vehicle-detail-btn">
                             VIEW DETAILS
                             <span>→</span>
                         </a>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="view-all-wrap">
-            <a href="#" class="view-all-btn">
+            <a href="{{ route('vehicles.index') }}" class="view-all-btn">
                 VIEW ALL VEHICLES
                 <span>→</span>
             </a>

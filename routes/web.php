@@ -8,10 +8,17 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Public\HomeController;
+use App\Http\Controllers\Public\VehicleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
+
+Route::get('/vehicles', [VehicleController::class, 'index'])
+    ->name('vehicles.index');
+
+Route::get('/vehicles/{car}', [VehicleController::class, 'show'])
+    ->name('vehicles.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

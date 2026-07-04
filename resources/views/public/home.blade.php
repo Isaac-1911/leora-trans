@@ -8,4 +8,11 @@
 
     @include('public.partials.featured-vehicles')
 
+    @include('public.partials.why-choose')
+
+    @include('public.partials.rental-process')
+
+    @include('public.partials.cta-luxury')
+
+    @include('public.partials.footer')
 @endsection

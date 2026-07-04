@@ -13,7 +13,7 @@
 
         <div class="public-nav-menu">
             <a href="{{ route('home') }}">HOME</a>
-            <a href="#vehicles">VEHICLES</a>
+            <a href="{{ route('vehicles.index') }}">VEHICLES</a>
             <a href="#about">ABOUT</a>
             <a href="#contact">CONTACT</a>
 
