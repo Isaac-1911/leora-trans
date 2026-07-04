@@ -14,7 +14,7 @@
         <div class="public-nav-menu">
             <a href="{{ route('home') }}">HOME</a>
             <a href="{{ route('vehicles.index') }}">VEHICLES</a>
-            <a href="#about">ABOUT</a>
+            <a href="{{ route('about') }}">ABOUT</a>
             <a href="#contact">CONTACT</a>
 
             <a href="#booking" class="public-nav-button">

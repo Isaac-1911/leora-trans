@@ -221,7 +221,7 @@
         const dailyRate = Number(@json($car->price_per_day));
 
         // Ganti nomor ini ke nomor WhatsApp admin Leora Trans
-        const adminWhatsappNumber = '6281234567890';
+        const adminWhatsappNumber = '6281337522373';
 
         const startDateInput = document.getElementById('startDate');
         const endDateInput = document.getElementById('endDate');

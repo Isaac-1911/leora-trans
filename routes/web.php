@@ -20,6 +20,8 @@ Route::get('/vehicles', [VehicleController::class, 'index'])
 Route::get('/vehicles/{car}', [VehicleController::class, 'show'])
     ->name('vehicles.show');
 
+Route::view('/about', 'public.about')->name('about');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
