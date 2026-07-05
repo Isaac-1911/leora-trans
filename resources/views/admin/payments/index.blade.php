@@ -148,7 +148,8 @@
                                     data-date="{{ $payment->payment_date }}"
                                     data-status="{{ strtoupper($payment->status) }}"
                                     data-proof="{{ asset('storage/' . $payment->proof_image) }}"
-                                    data-verified="{{ $payment->verifiedBy?->name ?? 'Not Verified' }}">
+                                    data-verified="{{ $payment->verifiedBy?->name ?? 'Not Verified' }}"
+                                    data-receipt="{{ route('admin.payments.receipt', $payment->id) }}">
 
                                     <i class="fa-solid fa-eye"></i>
 
@@ -435,6 +436,13 @@
                 <img id="paymentDetailProof" class="payment-proof-preview">
 
             </div>
+
+            <a id="paymentReceiptLink" target="_blank" class="btn-save"
+                style="text-align:center; text-decoration:none;">
+
+                CETAK STRUK
+
+            </a>
 
             <div class="modal-footer">
 
@@ -798,6 +806,9 @@
                     detailPaymentModal.classList.add(
                         'show'
                     );
+
+                    document.getElementById('paymentReceiptLink').href =
+                        button.dataset.receipt;
 
                 });
 

@@ -83,6 +83,9 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
         Route::delete('/{payment}', [PaymentController::class, 'destroy'])
             ->name('destroy');
+
+        Route::get('/{payment}/receipt', [PaymentController::class, 'receipt'])
+            ->name('receipt');
     });
 
     Route::prefix('reports')->name('reports.')->group(function () {

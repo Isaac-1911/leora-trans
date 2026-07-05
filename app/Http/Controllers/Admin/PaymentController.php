@@ -10,6 +10,8 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class PaymentController extends Controller
 {
@@ -215,6 +217,23 @@ class PaymentController extends Controller
         return back()->with(
             'success',
             'Payment berhasil dihapus!'
+        );
+    }
+
+    public function receipt(Payment $payment)
+    {
+        $payment->load([
+            'booking.car',
+            'verifier'
+        ]);
+
+        $pdf = Pdf::loadView(
+            'admin.payments.receipt',
+            compact('payment')
+        )->setPaper('a5', 'portrait');
+
+        return $pdf->stream(
+            'receipt-' . $payment->payment_code . '.pdf'
         );
     }
 }
