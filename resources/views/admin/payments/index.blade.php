@@ -487,7 +487,7 @@
                             BOOKING
                         </label>
 
-                        <select id="editBookingId" name="booking_id" required>
+                        <select id="editBookingId" name="booking_id">
 
                             @foreach ($bookings as $booking)
                                 <option value="{{ $booking->id }}">

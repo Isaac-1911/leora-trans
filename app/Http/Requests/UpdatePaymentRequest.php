@@ -16,7 +16,7 @@ class UpdatePaymentRequest extends FormRequest
         return [
 
             'booking_id' => [
-                'required',
+                'nullable',
                 'exists:bookings,id'
             ],
 
