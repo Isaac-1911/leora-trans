@@ -2017,6 +2017,64 @@ body {
     right: 80px;
 }
 
+.btn-receipt{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:16px;
+
+    padding:13px 20px;
+
+    background:#1b1b1b;
+
+    border:1px solid #3c3c3c;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.btn-receipt i{
+
+    font-size:14px;
+}
+
+.btn-receipt:hover{
+
+    background:#0f62fe;
+
+    border-color:#0f62fe;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(15,98,254,.25);
+}
+
+.btn-receipt:active{
+
+    transform:translateY(0);
+}
+
 /* ===================================
    DASHBOARD
 =================================== */

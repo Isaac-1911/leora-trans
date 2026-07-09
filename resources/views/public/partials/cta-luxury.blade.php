@@ -9,15 +9,15 @@
                 <span></span>
             </div>
 
-            <h2>READY TO EXPERIENCE LUXURY?</h2>
+            <h2>SIAP MERASAKAN KEMEWAHAN?</h2>
 
             <p>
-                Book your premium vehicle today and discover the difference
-                of true luxury car rental.
+                Pesan kendaraan premium Anda hari ini dan rasakan pengalaman berbeda
+                dari penyewaan mobil mewah yang sesungguhnya.
             </p>
 
             <a href="#vehicles" class="cta-luxury-btn">
-                BOOK VIA WHATSAPP
+                PESAN VIA WHATSAPP
             </a>
 
         </div>

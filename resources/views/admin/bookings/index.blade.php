@@ -321,12 +321,12 @@
                                     Select Vehicle
                                 </option>
 
-                                @foreach ($allCars as $car)
-                                    @if ($car->status === 'available')
-                                        <option value="{{ $car->id }}">
-                                            {{ $car->name }}
-                                        </option>
-                                    @endif
+                                @foreach ($availableCars as $car)
+                                    <option value="{{ $car->id }}">
+                                        {{ $car->name }}
+                                        —
+                                        {{ $car->plate_number }}
+                                    </option>
                                 @endforeach
 
                             </select>
@@ -632,10 +632,12 @@
 
                             <select id="editCarId" name="car_id" required>
 
-                                @foreach ($allCars as $car)
-                                    <option value="{{ $car->id }}">
-                                        {{ $car->name }}
-                                    </option>
+                                @foreach ($availableCars as $car)
+                                <option value="{{ $car->id }}">
+                                    {{ $car->name }}
+                                    —
+                                    {{ $car->plate_number }}
+                                </option>
                                 @endforeach
 
                             </select>

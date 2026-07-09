@@ -17,18 +17,18 @@
 
             <div>
                 <h1 class="cars-title">
-                    CARS MANAGEMENT
+                    MANAJEMEN MOBIL
                 </h1>
 
                 <p class="cars-subtitle">
-                    Manage your vehicle fleet
+                    Kelola armada anda
                 </p>
             </div>
 
         </div>
 
         <button class="add-car-btn" id="openAddCarModal">
-            + ADD VEHICLE
+            + TAMBAH KENDARAAN
         </button>
 
     </div>
@@ -36,13 +36,13 @@
     <!-- Action Bar -->
     <form method="GET" action="{{ route('admin.cars.index') }}" class="action-bar">
 
-        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search vehicles..."
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari kendaraan..."
             class="search-input" {{-- oninput="this.form.submit()" --}}>
 
         <select name="brand" class="filter-select">
 
             <option value="">
-                All Brands
+                Semua brand
             </option>
 
             @foreach ($brands as $brand)
@@ -58,19 +58,19 @@
         <select name="status" class="filter-select">
 
             <option value="">
-                All Status
+                Semua status
             </option>
 
             <option value="available" @selected(request('status') == 'available')>
-                Available
+                Tersedia
             </option>
 
             <option value="rented" @selected(request('status') == 'rented')>
-                Rented
+                Tersewa
             </option>
 
             <option value="maintenance" @selected(request('status') == 'maintenance')>
-                Maintenance
+                Diperbaiki
             </option>
 
         </select>
@@ -86,7 +86,8 @@
                 data-price="{{ number_format($car->price_per_day, 0, ',', '.') }}"
                 data-status="{{ strtoupper($car->status) }}" data-description="{{ $car->description }}"
                 data-thumbnail="{{ asset('storage/' . $car->thumbnail) }}"
-                data-location-link="{{ $car->car_location_link }}">
+                data-location-link="{{ $car->car_location_link }}"
+                data-transmission="{{ strtoupper($car->transmission) }}" data-seats="{{ $car->seats }}">
 
                 <div class="car-image-wrapper">
 
@@ -139,7 +140,8 @@
                             data-price="{{ $car->price_per_day }}" data-status="{{ $car->status }}"
                             data-description="{{ $car->description }}"
                             data-thumbnail="{{ asset('storage/' . $car->thumbnail) }}"
-                            data-location-link="{{ $car->car_location_link }}">
+                            data-location-link="{{ $car->car_location_link }}"
+                            data-transmission="{{ strtoupper($car->transmission) }}" data-seats="{{ $car->seats }}">
 
                             EDIT
 
@@ -147,7 +149,7 @@
 
                         <button type="button" class="btn-outline btn-delete" data-id="{{ $car->id }}"
                             data-name="{{ $car->name }}">
-                            DELETE
+                            HAPUS
                         </button>
 
                     </div>
@@ -197,6 +199,27 @@
                     <div class="form-group">
                         <label>PLATE NUMBER</label>
                         <input type="text" name="plate_number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>TRANSMISSION</label>
+
+                        <select name="transmission">
+                            <option value="manual">
+                                Manual
+                            </option>
+
+                            <option value="matic">
+                                Matic
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>SEATS</label>
+
+                        <input type="number" name="seats">
                     </div>
 
 
@@ -302,11 +325,11 @@
         <div class="delete-modal">
 
             <h2>
-                DELETE VEHICLE
+                HAPUS KENDARAAN
             </h2>
 
             <p>
-                Are you sure you want to delete:
+                Apakah anda yakin akan menghapus:
             </p>
 
             <h3 id="deleteVehicleName">
@@ -314,7 +337,7 @@
             </h3>
 
             <p class="delete-warning">
-                This action cannot be undone.
+                Aksi ini tidak bisa dikembalikan.
             </p>
 
             <form id="deleteForm" method="POST">
@@ -326,13 +349,13 @@
 
                     <button type="submit" class="btn-danger">
 
-                        DELETE
+                        HAPUS
 
                     </button>
 
                     <button type="button" id="closeDeleteModal" class="btn-cancel">
 
-                        CANCEL
+                        BATAL
 
                     </button>
 
@@ -354,7 +377,7 @@
                     ×
                 </button>
 
-                <h2>EDIT VEHICLE</h2>
+                <h2>EDIT KENDARAAN</h2>
 
             </div>
 
@@ -367,7 +390,7 @@
 
                     <div class="form-group">
 
-                        <label>VEHICLE NAME</label>
+                        <label>NAMA KENDARAAN</label>
 
                         <input type="text" name="name" id="editName">
 
@@ -383,7 +406,7 @@
 
                     <div class="form-group">
 
-                        <label>YEAR</label>
+                        <label>TAHUN</label>
 
                         <input type="number" name="year" id="editYear">
 
@@ -391,10 +414,31 @@
 
                     <div class="form-group">
 
-                        <label>PLATE NUMBER</label>
+                        <label>PLAT NOMOR</label>
 
                         <input type="text" name="plate_number" id="editPlate">
 
+                    </div>
+
+                    <div class="form-group">
+                        <label>TRANSMISI</label>
+
+                        <select name="transmission">
+                            <option value="manual">
+                                Manual
+                            </option>
+
+                            <option value="matic">
+                                Matic
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>JUMLAH KURSI</label>
+
+                        <input type="number" name="seats">
                     </div>
 
 
@@ -404,7 +448,7 @@
                 <div class="form-group">
 
                     <label>
-                        LOCATION LINK
+                        LINK LOKASI
                     </label>
 
                     <input type="url" id="editLocationLink" name="car_location_link">
@@ -413,7 +457,7 @@
 
                 <div class="form-group full-width">
 
-                    <label>DAILY PRICE</label>
+                    <label>HARGA PER HARI</label>
 
                     <input type="number" name="price_per_day" id="editPrice">
 
@@ -425,10 +469,10 @@
 
                     <select name="status" id="editStatus">
 
-                        <option value="available">Available</option>
-                        <option value="rented">Rented</option>
-                        <option value="reserved">Reserved</option>
-                        <option value="maintenance">Maintenance</option>
+                        <option value="available">Tersedia</option>
+                        <option value="rented">Tersewa</option>
+                        <option value="reserved">Terpesan</option>
+                        <option value="maintenance">Diperbaiki</option>
 
                     </select>
 
@@ -436,7 +480,7 @@
 
                 <div class="form-group full-width">
 
-                    <label>DESCRIPTION</label>
+                    <label>DESKRIPSI</label>
 
                     <textarea name="description" id="editDescription"></textarea>
 
@@ -444,7 +488,7 @@
 
                 <div class="form-group full-width">
 
-                    <label>THUMBNAIL IMAGE</label>
+                    <label>GAMBAR THUMBNAIL</label>
 
                     <label for="editThumbnail" id="editUploadBox" class="upload-box">
 
@@ -462,13 +506,13 @@
 
                     <button type="submit" class="btn-save">
 
-                        UPDATE VEHICLE
+                        UPDATE KENDARAAN
 
                     </button>
 
                     <button type="button" id="closeEditModal2" class="btn-cancel">
 
-                        CANCEL
+                        BATAL
 
                     </button>
 
@@ -487,7 +531,7 @@
             <div class="modal-header">
 
                 <h2>
-                    VEHICLE DETAILS
+                    DETAIL KENDARAAN
                 </h2>
 
                 <button id="closeCarDetailModal">
@@ -503,7 +547,7 @@
                 <div class="detail-item">
 
                     <span class="detail-label">
-                        VEHICLE NAME
+                        NAMA KENDARAAN
                     </span>
 
                     <span id="detailName" class="detail-value">
@@ -525,7 +569,7 @@
                 <div class="detail-item">
 
                     <span class="detail-label">
-                        YEAR
+                        TAHUN
                     </span>
 
                     <span id="detailYear" class="detail-value">
@@ -536,7 +580,7 @@
                 <div class="detail-item">
 
                     <span class="detail-label">
-                        PLATE NUMBER
+                        PLAT NOMOR
                     </span>
 
                     <span id="detailPlate" class="detail-value">
@@ -547,7 +591,31 @@
                 <div class="detail-item">
 
                     <span class="detail-label">
-                        PRICE / DAY
+                        TRANSMISI
+                    </span>
+
+                    <span id="detailTransmission" class="detail-value">
+                    </span>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        JUMLAH KURSI
+                    </span>
+
+                    <span id="detailSeats" class="detail-value">
+                    </span>
+
+                </div>
+
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        HARGA / HARI
                     </span>
 
                     <span id="detailPrice" class="detail-value">
@@ -580,7 +648,7 @@
 
                     <i class="fa-solid fa-location-dot"></i>
 
-                    OPEN LOCATION
+                    BUKA LOKASI
 
                 </a>
 
@@ -590,7 +658,7 @@
 
                 <span class="detail-label">
 
-                    DESCRIPTION
+                    DESKRIPSI
 
                 </span>
 
@@ -602,7 +670,7 @@
 
                 <button type="button" id="closeCarDetailModal2" class="btn-cancel">
 
-                    CLOSE
+                    TUTUP
 
                 </button>
 
@@ -903,6 +971,15 @@
                                 'detailPlate'
                             ).textContent =
                             card.dataset.plate;
+
+                        document.getElementById(
+                            'detailTransmission'
+                        ).textContent = card.dataset.transmission;
+
+                        document.getElementById(
+                            'detailSeats'
+                        ).textContent = card.dataset.seats;
+
 
                         document.getElementById(
                                 'detailPrice'

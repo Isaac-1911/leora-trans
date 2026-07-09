@@ -10,22 +10,21 @@
         </div>
 
         <h1 class="public-hero-title">
-            PREMIUM CAR RENTAL
-            <span>EXPERIENCE</span>
+            PENGALAMAN RENTAL
+            <span>PREMIUM</span>
         </h1>
 
         <p class="public-hero-subtitle">
-            Drive the extraordinary. Our collection of luxury vehicles delivers
-            performance, comfort, and prestige for every journey.
+            Rasakan pengalaman berkendara yang luar biasa. Koleksi kendaraan mewah kami menghadirkan performa dan kenyamanan dalam setiap perjalanan.
         </p>
 
         <div class="public-hero-actions">
-            <a href="#vehicles" class="hero-btn hero-btn-light">
-                EXPLORE CARS
+            <a href="{{ route('vehicles.index') }}" class="hero-btn hero-btn-light">
+                TELUSURI KENDARAAN
             </a>
 
             <a href="#booking" class="hero-btn hero-btn-outline">
-                BOOK NOW
+                PESAN SEKARANG
             </a>
         </div>
 

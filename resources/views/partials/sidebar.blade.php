@@ -36,7 +36,7 @@
 
             <i class="fa-solid fa-car-side"></i>
 
-            <span>CARS</span>
+            <span>MOBIL</span>
 
         </a>
 
@@ -46,7 +46,7 @@
 
             <i class="fa-regular fa-calendar-check"></i>
 
-            <span>BOOKINGS</span>
+            <span>PESANAN</span>
 
         </a>
 
@@ -56,7 +56,7 @@
 
             <i class="fa-regular fa-credit-card"></i>
 
-            <span>PAYMENTS</span>
+            <span>PEMBAYARAN</span>
 
         </a>
 
@@ -66,7 +66,7 @@
 
             <i class="fa-solid fa-chart-column"></i>
 
-            <span>REPORTS</span>
+            <span>LAPORAN</span>
 
         </a>
 

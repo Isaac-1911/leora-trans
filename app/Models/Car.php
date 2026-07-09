@@ -17,7 +17,9 @@ class Car extends Model
         'status',
         'description',
         'thumbnail',
-        'car_location_link'
+        'car_location_link',
+        'transmission',
+        'seats'
     ];
 
     public function images(){

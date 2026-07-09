@@ -18,6 +18,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -1448,12 +1449,25 @@ a {
     border: 1px solid var(--border);
     outline: none;
 
+
     color: var(--text);
     padding: 0 14px;
     margin-bottom: 8px;
 
     font-size: 13px;
     font-weight: 300;
+}
+
+/* Input tanggal */
+input[type="date"]{
+    color: #fff;
+    color-scheme: dark;
+}
+
+/* Ikon kalender */
+input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: brightness(0) invert(1);
+    cursor: pointer;
 }
 
 .booking-panel input:focus {
@@ -1572,6 +1586,11 @@ a {
     line-height: 1.4;
     font-weight: 300;
     color: var(--text-secondary);
+}
+
+.vehicle-description{
+    white-space: normal;
+    line-height: 1.7;
 }
 
 /* RESPONSIVE */
@@ -1869,6 +1888,26 @@ a {
     line-height: 1.45;
     font-weight: 300;
     color: var(--text-secondary);
+}
+
+.about-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.about-item i{
+    color: #0d6efd;
+    font-size: 13px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.about-item p{
+    margin: 0;
+    line-height: 1.8;
+    color: #bdbdbd;
 }
 
 /* ABOUT RESPONSIVE */

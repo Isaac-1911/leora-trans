@@ -1,7 +1,6 @@
 @extends('public.layouts.public')
 
 @section('content')
-
     @include('public.partials.navbar')
 
     <main class="about-page">
@@ -16,11 +15,11 @@
                     <span></span>
                 </div>
 
-                <h1>ABOUT LEONA TRANS</h1>
+                <h1>TENTANG LEONI TRANS</h1>
 
                 <p>
-                    Delivering premium car rental experiences since inception.
-                    We combine luxury vehicles with professional service to make every journey extraordinary.
+                    Melayani kebutuhan sewa mobil dengan kendaraan yang terawat, harga yang transparan, dan pelayanan
+                    profesional. Kami siap menjadi partner perjalanan Anda untuk berbagai keperluan.
                 </p>
             </div>
         </section>
@@ -36,27 +35,27 @@
                     </div>
 
                     <div>
-                        <h2>OUR STORY</h2>
+                        <h2>CERITA KAMI</h2>
                     </div>
                 </div>
 
                 <div class="about-story-text">
                     <p>
-                        Leona Trans was founded with a singular vision: to redefine the premium car rental
-                        experience in Indonesia. We recognized a gap in the market for truly exceptional service
-                        combined with the world's finest vehicles.
+                        Leora Trans hadir sebagai penyedia jasa rental mobil yang berkomitmen memberikan layanan
+                        transportasi yang aman, nyaman, dan terpercaya. Kami memahami bahwa setiap perjalanan memiliki
+                        tujuan yang penting, sehingga kami selalu berusaha memberikan kendaraan terbaik dengan pelayanan
+                        yang maksimal.
                     </p>
 
                     <p>
-                        Our journey began with a carefully curated fleet of luxury and performance vehicles,
-                        each selected for its exceptional engineering, design, and capability. We believe that
-                        the vehicle you drive is an extension of your personality and ambitions.
+                        Sejak berdiri, kami terus mengembangkan armada serta meningkatkan kualitas pelayanan agar dapat
+                        memenuhi kebutuhan pelanggan, baik untuk perjalanan pribadi, keluarga, wisata, maupun perjalanan
+                        dinas.
                     </p>
 
                     <p>
-                        Today, we continue to expand our collection while maintaining our unwavering commitment
-                        to quality, service, and customer satisfaction. Every member of our team shares a passion
-                        for automotive excellence and a dedication to making your experience seamless.
+                        Dengan mengutamakan kepuasan pelanggan, kami percaya bahwa pelayanan yang jujur, ramah, dan
+                        profesional merupakan kunci untuk membangun hubungan jangka panjang dengan setiap pelanggan.
                     </p>
                 </div>
 
@@ -71,25 +70,41 @@
                     <article class="about-vm-card">
                         <div class="detail-m-stripe"></div>
 
-                        <h3>OUR VISION</h3>
+                        <h3>VISI KAMI</h3>
 
                         <p>
-                            To be Indonesia's most trusted and respected premium car rental service,
-                            recognized for our exceptional fleet, uncompromising standards,
-                            and dedication to customer excellence.
+                            Menjadi perusahaan rental mobil terpercaya di Indonesia yang dikenal melalui pelayanan
+                            profesional, armada berkualitas, serta kepuasan pelanggan.
                         </p>
                     </article>
 
                     <article class="about-vm-card">
                         <div class="detail-m-stripe"></div>
 
-                        <h3>OUR MISSION</h3>
+                        <h3>MISI KAMI</h3>
 
-                        <p>
-                            To provide access to the world's finest vehicles with professional service
-                            that exceeds expectations, making luxury automotive experiences accessible
-                            for business, celebration, and adventure.
-                        </p>
+                        <div class="about-item">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Menyediakan armada aman, dan selalu dalam kondisi prima.</p>
+                        </div>
+
+                        <div class="about-item">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Memberikan pelayanan yang cepat, ramah, dan profesional</p>
+                        </div>
+
+                        <div class="about-item">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Menawarkan harga yang transparan tanpa biaya tersembunyi.</p>
+                        </div>
+
+                        <div class="about-item">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Membangun hubungan jangka panjang dengan pelanggan melalui kepercayaan dan kualitas layanan.
+                            </p>
+                        </div>
+
+
                     </article>
 
                 </div>
@@ -108,8 +123,8 @@
                     </div>
 
                     <div>
-                        <h2>OUR VALUES</h2>
-                        <p>The principles that guide us</p>
+                        <h2>NILAI-NILAI KAMI</h2>
+                        <p>Prinsip yang kami junjung</p>
                     </div>
                 </div>
 
@@ -120,11 +135,11 @@
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
 
-                        <h3>TRUST & RELIABILITY</h3>
+                        <h3>KEPERCAYAAN & KEANDALAN</h3>
 
                         <p>
-                            Building lasting relationships through consistent quality
-                            and professional service
+                            Kami selalu mengutamakan kejujuran, ketepatan waktu, dan pelayanan yang dapat diandalkan
+                            sehingga pelanggan merasa aman dalam setiap transaksi.
                         </p>
                     </article>
 
@@ -133,11 +148,11 @@
                             <i class="fa-solid fa-award"></i>
                         </div>
 
-                        <h3>EXCELLENCE</h3>
+                        <h3>PELAYANAN TERBAIK</h3>
 
                         <p>
-                            Maintaining the highest standards in vehicle quality
-                            and customer experience
+                            Kami berkomitmen memberikan pelayanan yang cepat, ramah, dan profesional untuk memastikan
+                            pengalaman sewa mobil yang nyaman.
                         </p>
                     </article>
 
@@ -146,11 +161,12 @@
                             <i class="fa-solid fa-users"></i>
                         </div>
 
-                        <h3>CUSTOMER FOCUS</h3>
+                        <h3>KEPUASAN PELANGGAN</h3>
 
                         <p>
-                            Your satisfaction and safety are our top priorities
-                            in every journey
+
+                            Kebutuhan dan kenyamanan pelanggan menjadi prioritas utama kami. Setiap masukan menjadi motivasi
+                            untuk terus meningkatkan kualitas layanan.
                         </p>
                     </article>
 
@@ -170,48 +186,47 @@
                     </div>
 
                     <div>
-                        <h2>FLEET QUALITY</h2>
+                        <h2>KUALITAS ARMADA</h2>
                     </div>
                 </div>
 
                 <div class="fleet-quality-card">
 
                     <p class="fleet-quality-intro">
-                        Every vehicle in our fleet undergoes rigorous inspection and maintenance protocols.
-                        We partner with authorized service centers to ensure each car meets manufacturer
-                        specifications and our exacting standards.
+                        Seluruh kendaraan di Leora Trans menjalani pemeriksaan dan perawatan secara berkala agar selalu siap digunakan. Kami memastikan setiap armada dalam kondisi bersih, aman, dan nyaman sehingga pelanggan dapat menikmati perjalanan tanpa rasa khawatir.
                     </p>
 
                     <div class="quality-list">
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>Premium fleet maintained to manufacturer standards</span>
+                            <span> Kendaraan selalu dirawat secara berkala.
+</span>
                         </div>
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>Comprehensive insurance coverage included</span>
+                            <span>Kendaraan bersih dan siap digunakan.</span>
                         </div>
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>24/7 customer support and roadside assistance</span>
+                            <span>Harga sewa transparan tanpa biaya tersembunyi.</span>
                         </div>
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>Transparent pricing with no hidden fees</span>
+                            <span>Pelayanan pelanggan yang responsif.</span>
                         </div>
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>Professional and experienced team</span>
+                            <span>Tim yang profesional dan berpengalaman.</span>
                         </div>
 
                         <div class="quality-item">
                             <i class="fa-regular fa-circle-check"></i>
-                            <span>Regular vehicle maintenance and inspection</span>
+                            <span>Keamanan serta kenyamanan pelanggan menjadi prioritas.</span>
                         </div>
 
                     </div>
@@ -231,11 +246,10 @@
                         <span></span>
                     </div>
 
-                    <h2>EXPERIENCE THE DIFFERENCE</h2>
+                    <h2>RASAKAN PERBEDAAN BERSAMA LEONI TRANS</h2>
 
                     <p>
-                        Discover why discerning clients choose Leona Trans
-                        for their premium car rental needs.
+                        Nikmati pengalaman sewa mobil yang nyaman, aman, dan terpercaya. Temukan armada terbaik kami untuk menemani setiap perjalanan Anda.
                     </p>
                 </div>
 
@@ -245,5 +259,4 @@
     </main>
 
     @include('public.partials.footer')
-
 @endsection

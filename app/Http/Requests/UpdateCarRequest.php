@@ -31,7 +31,9 @@ class UpdateCarRequest extends FormRequest
             'status' => ['required'],
             'thumbnail' => ['nullable', 'image'],
             'description' => ['nullable'],
-            'car_location_link' => 'nullable'
+            'car_location_link' => 'nullable',
+            'transmission' => 'nullable',
+            'seats' => 'nullable'
         ];
     }
 }

@@ -32,28 +32,28 @@
                     <div class="fleet-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
 
-                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search vehicles...">
+                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari kendaraan...">
                     </div>
 
                     <div class="fleet-status-tabs">
                         <button type="submit" name="status" value="all"
                             class="{{ request('status', 'all') === 'all' ? 'active' : '' }}">
-                            ALL
+                            SEMUA
                         </button>
 
                         <button type="submit" name="status" value="available"
                             class="{{ request('status') === 'available' ? 'active' : '' }}">
-                            AVAILABLE
+                            TERSEDIA
                         </button>
 
                         <button type="submit" name="status" value="reserved"
                             class="{{ request('status') === 'reserved' ? 'active' : '' }}">
-                            RESERVED
+                            DIPESAN
                         </button>
 
                         <button type="submit" name="status" value="rented"
                             class="{{ request('status') === 'rented' ? 'active' : '' }}">
-                            RENTED
+                            DIRENTAL
                         </button>
                     </div>
 
@@ -66,7 +66,7 @@
             <div class="public-container">
 
                 <p class="fleet-count">
-                    Showing {{ $cars->count() }} vehicles
+                    Menampilkan {{ $cars->count() }} kendaraan
                 </p>
 
                 <div class="fleet-grid">
@@ -95,23 +95,23 @@
 
                                 <div class="fleet-specs">
                                     <div>
-                                        <span>YEAR</span>
+                                        <span>TAHUN</span>
                                         <strong>{{ $car->year }}</strong>
                                     </div>
 
                                     <div>
-                                        <span>PLATE</span>
-                                        <strong>{{ $car->plate_number }}</strong>
+                                        <span>JUMLAH KURSI</span>
+                                        <strong>{{ $car->seats }}</strong>
                                     </div>
                                 </div>
 
                                 <p class="fleet-price">
                                     Rp {{ number_format($car->price_per_day, 0, ',', '.') }}
-                                    <span>/day</span>
+                                    <span>/hari</span>
                                 </p>
 
                                 <a href="{{ route('vehicles.show', $car) }}" class="vehicle-detail-btn">
-                                    VIEW DETAILS
+                                    LIHAT DETAIL
                                     <span>→</span>
                                 </a>
 
@@ -120,7 +120,7 @@
                         </article>
                     @empty
                         <div class="fleet-empty">
-                            No vehicles found.
+                            Tidak ada kendaraan yang ditemukan.
                         </div>
                     @endforelse
 

@@ -9,8 +9,8 @@
             </div>
 
             <div>
-                <h2>FEATURED VEHICLES</h2>
-                <p>Explore our premium collection</p>
+                <h2>KENDARAAN UNGGULAN</h2>
+                <p>Telusuri koleksi premium kami</p>
             </div>
         </div>
 
@@ -37,11 +37,11 @@
 
                         <p class="vehicle-price">
                             Rp {{ number_format($car->price_per_day, 0, ',', '.') }}
-                            <span>/day</span>
+                            <span>/hari</span>
                         </p>
 
                         <a href="{{ route('vehicles.show', $car) }}" class="vehicle-detail-btn">
-                            VIEW DETAILS
+                            LIHAT DETAIL
                             <span>→</span>
                         </a>
                     </div>
@@ -52,7 +52,7 @@
 
         <div class="view-all-wrap">
             <a href="{{ route('vehicles.index') }}" class="view-all-btn">
-                VIEW ALL VEHICLES
+                LIHAT SEMUA KENDARAAN
                 <span>→</span>
             </a>
         </div>

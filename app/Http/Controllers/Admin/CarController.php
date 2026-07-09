@@ -49,6 +49,7 @@ class CarController extends Controller
             ->distinct()
             ->pluck('brand');
 
+
         return view(
             'admin.cars.index',
             compact(

@@ -9,8 +9,8 @@
             </div>
 
             <div>
-                <h2>RENTAL PROCESS</h2>
-                <p>Simple and streamlined</p>
+                <h2>PROSES RENTAL</h2>
+                <p>Sederhana dan efisien</p>
             </div>
         </div>
 
@@ -19,10 +19,10 @@
             <article class="process-card">
                 <span class="process-number">01</span>
 
-                <h3>CHOOSE VEHICLE</h3>
+                <h3>PILIH KENDARAAN</h3>
 
                 <p>
-                    Browse our premium collection
+                    Jelajahi koleksi premium kami
                 </p>
 
                 <span class="process-arrow">→</span>
@@ -31,10 +31,10 @@
             <article class="process-card">
                 <span class="process-number">02</span>
 
-                <h3>BOOK NOW</h3>
+                <h3>PESAN SEKARANG</h3>
 
                 <p>
-                    Reserve your preferred dates
+                    Pesan tanggal pilihan Anda
                 </p>
 
                 <span class="process-arrow">→</span>
@@ -43,10 +43,10 @@
             <article class="process-card">
                 <span class="process-number">03</span>
 
-                <h3>CONFIRM PAYMENT</h3>
+                <h3>KONFIRMASI</h3>
 
                 <p>
-                    Secure payment verification
+                    Verifikasi pembayaran yang aman
                 </p>
 
                 <span class="process-arrow">→</span>
@@ -55,10 +55,10 @@
             <article class="process-card">
                 <span class="process-number">04</span>
 
-                <h3>DRIVE AWAY</h3>
+                <h3>KEMUDIKANLAH</h3>
 
                 <p>
-                    Experience luxury on wheels
+                    Rasakan kemewahan di atas roda
                 </p>
             </article>
 

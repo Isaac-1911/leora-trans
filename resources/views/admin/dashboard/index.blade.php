@@ -23,7 +23,7 @@
             </h1>
 
             <p class="cars-subtitle">
-                Welcome back, Admin
+                Selamat datang, Admin
             </p>
 
         </div>
@@ -41,7 +41,7 @@
         </div>
 
         <span class="dashboard-label">
-            TOTAL CARS
+            TOTAL MOBIL
         </span>
 
         <h2>
@@ -57,7 +57,7 @@
         </div>
 
         <span class="dashboard-label">
-            AVAILABLE CARS
+            MOBIL TERSEDIA
         </span>
 
         <h2>
@@ -73,7 +73,7 @@
         </div>
 
         <span class="dashboard-label">
-            ACTIVE RENTALS
+            RENTAL AKTIF
         </span>
 
         <h2>
@@ -89,7 +89,7 @@
         </div>
 
         <span class="dashboard-label">
-            MONTHLY REVENUE
+            PENDAPATAN BULANAN
         </span>
 
         <h2>
@@ -105,7 +105,7 @@
     <div class="dashboard-panel revenue-panel">
 
         <h3>
-            REVENUE TREND
+            TREN PENDAPATAN
         </h3>
 
         <canvas id="revenueChart"></canvas>
@@ -115,7 +115,7 @@
     <div class="dashboard-panel vehicle-panel">
 
         <h3>
-            VEHICLE STATUS
+            STATUS KENDARAAN
         </h3>
 
         <canvas id="vehicleChart"></canvas>
@@ -131,11 +131,11 @@
         <div class="panel-header">
 
             <h3>
-                RECENT BOOKINGS
+                PESANAN TERBARU
             </h3>
 
             <a href="{{ route('admin.bookings.index') }}">
-                VIEW ALL
+                LIHAT SEMUA
             </a>
 
         </div>
@@ -174,25 +174,25 @@
 
                                 @case('confirmed')
                                     <span class="badge badge-green">
-                                        CONFIRMED
+                                        DIKONFIRMASI
                                     </span>
                                 @break
 
                                 @case('ongoing')
                                     <span class="badge badge-blue">
-                                        ONGOING
+                                        DALAM PERJALANAN
                                     </span>
                                 @break
 
                                 @case('completed')
                                     <span class="badge badge-gray">
-                                        COMPLETED
+                                        SELESAI
                                     </span>
                                 @break
 
                                 @default
                                     <span class="badge badge-yellow">
-                                        WAITING
+                                        MENUNGGU
                                     </span>
 
                             @endswitch
@@ -260,13 +260,13 @@
                             @if($payment->status == 'approved')
 
                                 <span class="badge badge-green">
-                                    APPROVED
+                                    DISETUJUI
                                 </span>
 
                             @elseif($payment->status == 'rejected')
 
                                 <span class="badge badge-red">
-                                    REJECTED
+                                    DITOLAK
                                 </span>
 
                             @else

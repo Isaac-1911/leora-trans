@@ -4,7 +4,7 @@
         <div class="footer-grid">
 
             <div class="footer-brand">
-                <h3>LEORA TRANS</h3>
+                <h3>LEONI TRANS</h3>
 
                 <div class="footer-stripe">
                     <span></span>
@@ -13,24 +13,23 @@
                 </div>
 
                 <p>
-                    Premium car rental experience with luxury vehicles
-                    and professional service.
+                    Leora Trans menyediakan layanan rental mobil dengan armada yang terawat, harga yang transparan, dan pelayanan profesional untuk memenuhi berbagai kebutuhan perjalanan Anda.
                 </p>
             </div>
 
             <div class="footer-column">
-                <h4>QUICK LINKS</h4>
+                <h4>AKSES CEPAT</h4>
 
                 <ul>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="#vehicles">Vehicles</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                    <li><a href="{{ route('vehicles.index') }}">Kendaraan</a></li>
+                    <li><a href="{{ route('about') }}">Tentang</a></li>
+                    <li><a href="{{ route('contact') }}">Kontak</a></li>
                 </ul>
             </div>
 
             <div class="footer-column footer-contact">
-                <h4>CONTACT</h4>
+                <h4>KONTAK</h4>
 
                 <ul>
                     <li>
@@ -40,18 +39,18 @@
 
                     <li>
                         <i class="fa-regular fa-envelope"></i>
-                        <span>info@leoratrans.com</span>
+                        <span>info@leonitrans.com</span>
                     </li>
 
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Jakarta, Indonesia</span>
+                        <span>Situbondo, Indonesia</span>
                     </li>
                 </ul>
             </div>
 
             <div class="footer-column footer-social">
-                <h4>FOLLOW US</h4>
+                <h4>IKUTI KAMI</h4>
 
                 <div class="social-links">
                     <a href="#" aria-label="Facebook">

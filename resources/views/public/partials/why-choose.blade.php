@@ -9,8 +9,8 @@
             </div>
 
             <div>
-                <h2>WHY CHOOSE LEORA TRANS</h2>
-                <p>Excellence in every detail</p>
+                <h2>MENGAPA HARUS LEONI TRANS</h2>
+                <p>Kesempurnaan dalam setiap detail</p>
             </div>
         </div>
 
@@ -18,13 +18,13 @@
 
             <article class="why-card">
                 <div class="why-icon">
-                    <i class="fa-regular fa-shield"></i>
+                    <i class="fa-solid fa-award"></i>
                 </div>
 
-                <h3>PREMIUM QUALITY</h3>
+                <h3>KUALITAS PREMIUM</h3>
 
                 <p>
-                    Luxury vehicles maintained to highest standards
+                    Kendaraan mewah yang dirawat dengan standar tertinggi
                 </p>
             </article>
 
@@ -33,22 +33,22 @@
                     <i class="fa-regular fa-clock"></i>
                 </div>
 
-                <h3>24/7 SUPPORT</h3>
+                <h3>LAYANAN 24/7</h3>
 
                 <p>
-                    Round-the-clock customer service and assistance
+                    Layanan dan bantuan pelanggan sepanjang waktu
                 </p>
             </article>
 
             <article class="why-card">
                 <div class="why-icon">
-                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
 
-                <h3>PROFESSIONAL SERVICE</h3>
+                <h3>LAYANAN PROFESIONAL</h3>
 
                 <p>
-                    Experienced team dedicated to your satisfaction
+                    Tim berpengalaman yang berdedikasi pada kepuasan Anda
                 </p>
             </article>
 

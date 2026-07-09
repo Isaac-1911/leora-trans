@@ -14,50 +14,50 @@
                     <div class="contact-left">
 
                         <div class="contact-form-card">
-                            <h2>SEND US A MESSAGE</h2>
+                            <h2>APA YANG BISA KAMI BANTU?</h2>
 
                             <form id="contactForm">
 
                                 <div class="contact-form-grid">
 
                                     <div class="form-group">
-                                        <label>FULL NAME</label>
+                                        <label>NAMA LENGKAP</label>
 
-                                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                                        <input type="text" id="name" name="name" placeholder="Nama anda" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>EMAIL ADDRESS</label>
+                                        <label>ALAMAT EMAIL</label>
 
-                                        <input type="email" id="email" name="email" placeholder="your@email.com"
+                                        <input type="email" id="email" name="email" placeholder="anda@email.com"
                                             required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>PHONE NUMBER</label>
+                                        <label>NOMOR HP</label>
 
                                         <input type="text" id="phone" name="phone" placeholder="+62 81234567890"
                                             required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>SUBJECT</label>
+                                        <label>SUBJEK</label>
 
-                                        <input type="text" id="subject" name="subject" placeholder="How can we help?"
-                                            required>
+                                        <input type="text" id="subject" name="subject"
+                                            placeholder="Apa yang bisa kami bantu?" required>
                                     </div>
 
                                 </div>
 
-                                <div class="form-group">
-                                    <label>MESSAGE</label>
+                                <div class="form-group" style="padding-top: 20px">
+                                    <label>PESAN</label>
 
-                                    <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                                    <textarea id="message" name="message" placeholder="Beri tahu kami tentang kebutuhan anda..." required></textarea>
                                 </div>
 
                                 <button type="submit" class="contact-submit-btn">
                                     <i class="fa-regular fa-paper-plane"></i>
-                                    SEND MESSAGE
+                                    KIRIM PESAN
                                 </button>
 
                             </form>
@@ -88,15 +88,14 @@
                                 <span></span>
                             </div>
 
-                            <h2>QUICK CONTACT</h2>
+                            <h2>KONTAK CEPAT</h2>
 
                             <p>
-                                Need immediate assistance? Contact us via WhatsApp
-                                for fastest response.
+                                Butuh bantuan secepatnya? Hubungi kami melalui whatsapp untuk respon yang lebih cepat.
                             </p>
 
                             <a href="https://wa.me/6281337522373" target="_blank" class="quick-wa-btn">
-                                WHATSAPP US
+                                WHATSAPP KAMI
                             </a>
                         </div>
 
@@ -106,7 +105,7 @@
                             </div>
 
                             <div>
-                                <h3>PHONE</h3>
+                                <h3>NOMOR HP</h3>
                                 <p>+62 812-3456-7890</p>
                                 <p>+62 812-9876-5432</p>
                             </div>
@@ -119,7 +118,7 @@
 
                             <div>
                                 <h3>EMAIL</h3>
-                                <p>info@leonatrans.com</p>
+                                <p>info@leonitrans.com</p>
                                 <p>booking@leonatrans.com</p>
                             </div>
                         </div>
@@ -130,7 +129,7 @@
                             </div>
 
                             <div>
-                                <h3>ADDRESS</h3>
+                                <h3>ALAMAT</h3>
                                 <p>Jl. Sudirman No. 123</p>
                                 <p>Jakarta Selatan, 12190</p>
                             </div>
@@ -142,9 +141,9 @@
                             </div>
 
                             <div>
-                                <h3>BUSINESS HOURS</h3>
-                                <p>Monday - Friday: 08:00 - 20:00</p>
-                                <p>Saturday - Sunday: 09:00 - 18:00</p>
+                                <h3>JAM KERJA</h3>
+                                <p>Senin - Jumat: 08:00 - 20:00</p>
+                                <p>Sabtu - Minggu: 09:00 - 18:00</p>
                             </div>
                         </div>
 

@@ -437,10 +437,13 @@
 
             </div>
 
-            <a id="paymentReceiptLink" target="_blank" class="btn-save"
-                style="text-align:center; text-decoration:none;">
+            <a id="paymentReceiptLink" target="_blank" class="btn-receipt">
 
-                CETAK STRUK
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>
+                    CETAK STRUK
+                </span>
 
             </a>
 

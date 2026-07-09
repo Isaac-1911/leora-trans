@@ -10,7 +10,7 @@
 
                 <a href="{{ route('vehicles.index') }}" class="back-link">
                     <span>←</span>
-                    BACK TO VEHICLES
+                    KEMBALI KE KENDARAAN
                 </a>
 
                 <div class="detail-main-image-wrap">
@@ -65,9 +65,9 @@
                                     </h1>
 
                                     <p class="detail-meta">
-                                        Year: {{ $car->year }}
+                                        TAHUN: {{ $car->year }}
                                         <span>•</span>
-                                        Plate: {{ $car->plate_number }}
+                                        PLAT: {{ $car->plate_number }}
                                     </p>
                                 </div>
 
@@ -75,7 +75,7 @@
                                     <strong>
                                         Rp {{ number_format($car->price_per_day, 0, ',', '.') }}
                                     </strong>
-                                    <span>per day</span>
+                                    <span>per hari</span>
                                 </div>
 
                             </div>
@@ -86,26 +86,26 @@
                                 <span></span>
                             </div>
 
-                            <p class="detail-description">
-                                {{ $car->description }}
+                            <p class="vehicle-description">
+                                {!! nl2br(e($car->description)) !!}
                             </p>
 
                         </div>
 
                         <div class="spec-card">
 
-                            <h2>SPECIFICATIONS</h2>
+                            <h2>SPESIFIKASI</h2>
 
                             <div class="spec-grid">
 
                                 <div class="spec-item">
                                     <div class="spec-icon">
-                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <i class="fa-solid fa-gears"></i>
                                     </div>
 
                                     <div>
-                                        <span>YEAR</span>
-                                        <strong>{{ $car->year }}</strong>
+                                        <span>TRANSMISI</span>
+                                        <strong>{{ strtoupper($car->transmission) }}</strong>
                                     </div>
                                 </div>
 
@@ -115,20 +115,20 @@
                                     </div>
 
                                     <div>
-                                        <span>PLATE NUMBER</span>
+                                        <span>PLAT NOMOR</span>
                                         <strong>{{ $car->plate_number }}</strong>
                                     </div>
                                 </div>
 
                                 <div class="spec-item">
                                     <div class="spec-icon">
-                                        <i class="fa-solid fa-location-dot"></i>
+                                        <i class="fa-solid fa-user-group"></i>
                                     </div>
 
                                     <div>
-                                        <span>LOCATION</span>
+                                        <span>JUMLAH KURSI</span>
                                         <strong>
-                                            {{ $car->car_location_link ? 'Available' : 'Not Set' }}
+                                            {{ $car->seats}}
                                         </strong>
                                     </div>
                                 </div>
@@ -152,11 +152,11 @@
 
                     <aside class="booking-panel">
 
-                        <h2>BOOK THIS VEHICLE</h2>
+                        <h2>PESAN KENDARAAN INI</h2>
 
                         <form id="bookingWhatsappForm">
 
-                            <label>RENTAL PERIOD</label>
+                            <label>PERIODE SEWA</label>
 
                             <input type="date" id="startDate" name="start_date" required>
 
@@ -165,14 +165,14 @@
                             <div class="booking-summary">
 
                                 <div class="summary-row">
-                                    <span>Daily Rate</span>
+                                    <span>Tarif Harian</span>
                                     <strong id="dailyRateText">
                                         Rp {{ number_format($car->price_per_day, 0, ',', '.') }}
                                     </strong>
                                 </div>
 
                                 <div class="summary-row">
-                                    <span>Duration</span>
+                                    <span>Durasi</span>
                                     <strong id="durationText">0 day</strong>
                                 </div>
 
@@ -190,15 +190,15 @@
                             </div>
 
                             <button type="submit" class="booking-main-btn">
-                                BOOK NOW
+                                PESAN SEKARANG
                             </button>
 
                             <a id="whatsappContactBtn" href="#" class="booking-wa-btn" target="_blank">
-                                CONTACT VIA WHATSAPP
+                                HUBUNGI VIA WHATSAPP
                             </a>
 
                             <p class="booking-help">
-                                Need help? Contact our team for personalized assistance.
+                                Butuh bantuan? Hubungi tim kami untuk bantuan yang dipersonalisasi.
                             </p>
 
                         </form>

@@ -2,67 +2,98 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Receipt {{ $payment->payment_code }}</title>
+
+    <title>
+        Receipt {{ $payment->payment_code }}
+    </title>
 
     <style>
-        body {
-            font-family: DejaVu Sans, sans-serif;
-            font-size: 12px;
-            color: #111;
+        * {
+            box-sizing: border-box;
         }
 
-        .header {
+        body {
+            font-family: DejaVu Sans, sans-serif;
+            font-size: 10px;
+            color: #111;
+            margin: 0;
+            padding: 0;
+        }
+
+        .receipt {
+            width: 260px;
+            margin: 0 auto;
+            padding: 10px 8px;
+        }
+
+        .center {
             text-align: center;
-            border-bottom: 2px solid #111;
-            padding-bottom: 10px;
-            margin-bottom: 16px;
         }
 
         .brand {
-            font-size: 22px;
+            font-size: 16px;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: .5px;
+            margin-bottom: 3px;
         }
 
-        .subtitle {
-            font-size: 11px;
-            color: #555;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        td {
-            padding: 6px 0;
-            vertical-align: top;
-        }
-
-        .label {
-            width: 38%;
-            color: #555;
-        }
-
-        .value {
-            font-weight: bold;
+        .info {
+            font-size: 9px;
+            line-height: 1.35;
         }
 
         .line {
-            border-top: 1px solid #ddd;
-            margin: 14px 0;
+            border-top: 1px dashed #111;
+            margin: 8px 0;
         }
 
-        .total {
-            font-size: 16px;
+        .row {
+            width: 100%;
+            display: table;
+            margin-bottom: 3px;
+        }
+
+        .left {
+            display: table-cell;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .right {
+            display: table-cell;
+            text-align: right;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .label {
+            color: #333;
+        }
+
+        .bold {
             font-weight: bold;
+        }
+
+        .item-name {
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .small {
+            font-size: 9px;
+            color: #333;
+        }
+
+        .total-row {
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 9px;
+            line-height: 1.4;
         }
 
         .status {
@@ -70,104 +101,176 @@
             font-weight: bold;
         }
 
-        .footer {
-            margin-top: 28px;
-            text-align: center;
-            font-size: 10px;
-            color: #666;
+        .code {
+            font-size: 9px;
+            word-break: break-all;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="header">
-        <div class="brand">LEORA TRANS</div>
-        <div class="subtitle">Rental Car Payment Receipt</div>
-    </div>
+    <div class="receipt">
 
-    <div class="title">
-        PAYMENT RECEIPT
-    </div>
+        <div class="center">
 
-    <table>
-        <tr>
-            <td class="label">Payment Code</td>
-            <td class="value">{{ $payment->payment_code }}</td>
-        </tr>
+            <div class="brand">
+                LEORA TRANS
+            </div>
 
-        <tr>
-            <td class="label">Booking Code</td>
-            <td class="value">{{ $payment->booking->booking_code }}</td>
-        </tr>
+            <div class="info">
+                Rental Mobil Jember<br>
+                Jl. Karangrejo, Sumbersari, Jember<br>
+                Telp: 081337522373<br>
+                {{ $payment->payment_code }}
+            </div>
 
-        <tr>
-            <td class="label">Customer</td>
-            <td class="value">{{ $payment->booking->customer_name }}</td>
-        </tr>
+        </div>
 
-        <tr>
-            <td class="label">Phone</td>
-            <td class="value">{{ $payment->booking->customer_phone }}</td>
-        </tr>
+        <div class="line"></div>
 
-        <tr>
-            <td class="label">Vehicle</td>
-            <td class="value">{{ $payment->booking->car->name }}</td>
-        </tr>
+        <div class="row">
+            <div class="left">
+                {{ \Carbon\Carbon::parse($payment->payment_date)->format('d-m-Y') }}
+            </div>
 
-        <tr>
-            <td class="label">Plate Number</td>
-            <td class="value">{{ $payment->booking->car->plate_number }}</td>
-        </tr>
+            <div class="right">
+                {{ \Carbon\Carbon::parse($payment->payment_date)->format('H:i:s') }}
+            </div>
+        </div>
 
-        <tr>
-            <td class="label">Rental Period</td>
-            <td class="value">
-                {{ \Carbon\Carbon::parse($payment->booking->start_date)->format('d M Y') }}
+        <div class="row">
+            <div class="left">
+                Booking
+            </div>
+
+            <div class="right bold">
+                {{ $payment->booking->booking_code }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                Customer
+            </div>
+
+            <div class="right">
+                {{ $payment->booking->customer_name }}
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="item-name">
+            1. {{ $payment->booking->car->name }}
+        </div>
+
+        <div class="row small">
+            <div class="left">
+                {{ $payment->booking->total_days }} hari x
+                Rp {{ number_format($payment->booking->price_per_day, 0, ',', '.') }}
+            </div>
+
+            <div class="right">
+                Rp {{ number_format($payment->booking->total_price, 0, ',', '.') }}
+            </div>
+        </div>
+
+        <div class="row small">
+            <div class="left">
+                Plat nomor
+            </div>
+
+            <div class="right">
+                {{ $payment->booking->car->plate_number }}
+            </div>
+        </div>
+
+        <div class="row small">
+            <div class="left">
+                Durasi
+            </div>
+
+            <div class="right">
+                {{ \Carbon\Carbon::parse($payment->booking->start_date)->format('d-m-Y') }}
                 -
-                {{ \Carbon\Carbon::parse($payment->booking->end_date)->format('d M Y') }}
-            </td>
-        </tr>
+                {{ \Carbon\Carbon::parse($payment->booking->end_date)->format('d-m-Y') }}
+            </div>
+        </div>
 
-        <tr>
-            <td class="label">Total Days</td>
-            <td class="value">{{ $payment->booking->total_days }} Days</td>
-        </tr>
-    </table>
+        <div class="line"></div>
 
-    <div class="line"></div>
+        <div class="row">
+            <div class="left">
+                Sub Total
+            </div>
 
-    <table>
-        <tr>
-            <td class="label">Payment Date</td>
-            <td class="value">
-                {{ \Carbon\Carbon::parse($payment->payment_date)->format('d M Y H:i') }}
-            </td>
-        </tr>
+            <div class="right">
+                Rp {{ number_format($payment->booking->total_price, 0, ',', '.') }}
+            </div>
+        </div>
 
-        <tr>
-            <td class="label">Payment Status</td>
-            <td class="value status">{{ $payment->status }}</td>
-        </tr>
+        <div class="row total-row">
+            <div class="left">
+                Total
+            </div>
 
-        <tr>
-            <td class="label">Verified By</td>
-            <td class="value">
-                {{ $payment->verifier?->name ?? 'Not Verified' }}
-            </td>
-        </tr>
+            <div class="right">
+                Rp {{ number_format($payment->booking->total_price, 0, ',', '.') }}
+            </div>
+        </div>
 
-        <tr>
-            <td class="label total">Amount Paid</td>
-            <td class="value total">
+        <div class="row">
+            <div class="left">
+                Dibayar
+            </div>
+
+            <div class="right bold">
                 Rp {{ number_format($payment->amount, 0, ',', '.') }}
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
 
-    <div class="footer">
-        This receipt was generated automatically by Leora Trans system.
+        <div class="row">
+            <div class="left">
+                Sisa
+            </div>
+
+            <div class="right">
+                Rp {{ number_format(max($payment->booking->total_price - $payment->amount, 0), 0, ',', '.') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                Status
+            </div>
+
+            <div class="right status">
+                {{ $payment->status }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                Verified
+            </div>
+
+            <div class="right">
+                {{ $payment->verifier?->name ?? 'Not Verified' }}
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="footer">
+            Terima kasih telah menggunakan<br>
+            layanan Leora Trans<br><br>
+
+            <span class="code">
+                Receipt: {{ $payment->payment_code }}
+            </span>
+        </div>
+
     </div>
 
 </body>
