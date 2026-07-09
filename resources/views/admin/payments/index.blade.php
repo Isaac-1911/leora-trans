@@ -145,7 +145,7 @@
                                     data-booking="{{ $payment->booking->booking_code }}"
                                     data-customer="{{ $payment->booking->customer_name }}"
                                     data-amount="{{ number_format($payment->amount, 0, ',', '.') }}"
-                                    data-date="{{ $payment->payment_date }}"
+                                    data-date="{{ \Carbon\Carbon::parse($payment->payment_date)->format('d-m-Y') }}"
                                     data-status="{{ strtoupper($payment->status) }}"
                                     data-proof="{{ asset('storage/' . $payment->proof_image) }}"
                                     data-verified="{{ $payment->verifiedBy?->name ?? 'Not Verified' }}"
