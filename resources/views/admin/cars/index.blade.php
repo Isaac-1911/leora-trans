@@ -858,6 +858,18 @@
             );
 
         document
+            .querySelectorAll('.card-actions button')
+            .forEach(button => {
+
+                button.addEventListener('click', function(e) {
+
+                    e.stopPropagation();
+
+                });
+
+            });
+
+        document
             .querySelectorAll(
                 '.car-detail-trigger'
             )
