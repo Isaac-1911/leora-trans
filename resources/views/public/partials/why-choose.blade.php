@@ -9,7 +9,7 @@
             </div>
 
             <div>
-                <h2>MENGAPA HARUS LEONI TRANS</h2>
+                <h2>MENGAPA HARUS LEONY BINTANG TRANS</h2>
                 <p>Kesempurnaan dalam setiap detail</p>
             </div>
         </div>

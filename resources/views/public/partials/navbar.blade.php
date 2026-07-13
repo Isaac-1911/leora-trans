@@ -2,7 +2,7 @@
     <div class="public-navbar-container">
 
         <a href="{{ route('home') }}" class="public-logo">
-            <span class="public-logo-text">LEONI TRANS</span>
+            <span class="public-logo-text">LEONY BINTANG TRANS</span>
 
             <span class="public-logo-stripe">
                 <span></span>

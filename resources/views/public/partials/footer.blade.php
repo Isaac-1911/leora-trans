@@ -4,7 +4,7 @@
         <div class="footer-grid">
 
             <div class="footer-brand">
-                <h3>LEONI TRANS</h3>
+                <h3>LEONY BINTANG TRANS</h3>
 
                 <div class="footer-stripe">
                     <span></span>

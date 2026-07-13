@@ -15,7 +15,7 @@
                     <span></span>
                 </div>
 
-                <h1>TENTANG LEONI TRANS</h1>
+                <h1>TENTANG LEONY BINTANG TRANS</h1>
 
                 <p>
                     Melayani kebutuhan sewa mobil dengan kendaraan yang terawat, harga yang transparan, dan pelayanan
@@ -246,7 +246,7 @@
                         <span></span>
                     </div>
 
-                    <h2>RASAKAN PERBEDAAN BERSAMA LEONI TRANS</h2>
+                    <h2>RASAKAN PERBEDAAN BERSAMA LEONY BINTANG TRANS</h2>
 
                     <p>
                         Nikmati pengalaman sewa mobil yang nyaman, aman, dan terpercaya. Temukan armada terbaik kami untuk menemani setiap perjalanan Anda.
