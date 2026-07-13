@@ -41,7 +41,7 @@
 
                 <div class="about-story-text">
                     <p>
-                        Leora Trans hadir sebagai penyedia jasa rental mobil yang berkomitmen memberikan layanan
+                        Leony Bintang Trans hadir sebagai penyedia jasa rental mobil yang berkomitmen memberikan layanan
                         transportasi yang aman, nyaman, dan terpercaya. Kami memahami bahwa setiap perjalanan memiliki
                         tujuan yang penting, sehingga kami selalu berusaha memberikan kendaraan terbaik dengan pelayanan
                         yang maksimal.
@@ -193,7 +193,7 @@
                 <div class="fleet-quality-card">
 
                     <p class="fleet-quality-intro">
-                        Seluruh kendaraan di Leora Trans menjalani pemeriksaan dan perawatan secara berkala agar selalu siap digunakan. Kami memastikan setiap armada dalam kondisi bersih, aman, dan nyaman sehingga pelanggan dapat menikmati perjalanan tanpa rasa khawatir.
+                        Seluruh kendaraan di Leony Bintang Trans menjalani pemeriksaan dan perawatan secara berkala agar selalu siap digunakan. Kami memastikan setiap armada dalam kondisi bersih, aman, dan nyaman sehingga pelanggan dapat menikmati perjalanan tanpa rasa khawatir.
                     </p>
 
                     <div class="quality-list">

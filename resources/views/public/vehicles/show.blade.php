@@ -220,7 +220,7 @@
         const plateNumber = @json($car->plate_number);
         const dailyRate = Number(@json($car->price_per_day));
 
-        // Ganti nomor ini ke nomor WhatsApp admin Leora Trans
+        // Ganti nomor ini ke nomor WhatsApp admin
         const adminWhatsappNumber = '6281337522373';
 
         const startDateInput = document.getElementById('startDate');
@@ -304,7 +304,7 @@
             }
 
             const message =
-                `Halo Admin Leora Trans, saya ingin booking mobil.
+                `Halo Admin Leony Bintang Trans, saya ingin booking mobil.
 
 Detail Mobil:
 - Mobil: ${carName}
@@ -355,7 +355,7 @@ Mohon info ketersediaan dan proses booking selanjutnya.`;
 
             if (!whatsappUrl) {
                 const defaultMessage =
-                    `Halo Admin Leora Trans, saya ingin bertanya tentang mobil ${carName}.`;
+                    `Halo Admin Leony Bintang Trans, saya ingin bertanya tentang mobil ${carName}.`;
 
                 window.open(
                     `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent(defaultMessage)}`,

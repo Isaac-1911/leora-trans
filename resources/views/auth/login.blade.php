@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Leora Trans</title>
+    <title>Login | Leony Bintang Trans</title>
 
     @vite([
         'resources/css/app.css'
@@ -229,7 +229,7 @@
 <body>
     <div class="login-container">
         <div class="logo">
-            LEORA TRANS
+            LEONY BINTANG TRANS
         </div>
         <div class="logo-sub">
             ADMINISTRATOR

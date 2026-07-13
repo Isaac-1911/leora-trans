@@ -13,7 +13,7 @@
                 </div>
 
                 <p>
-                    Leora Trans menyediakan layanan rental mobil dengan armada yang terawat, harga yang transparan, dan pelayanan profesional untuk memenuhi berbagai kebutuhan perjalanan Anda.
+                    Leony Bintang Trans menyediakan layanan rental mobil dengan armada yang terawat, harga yang transparan, dan pelayanan profesional untuk memenuhi berbagai kebutuhan perjalanan Anda.
                 </p>
             </div>
 

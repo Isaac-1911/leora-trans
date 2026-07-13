@@ -115,7 +115,7 @@
         <div class="center">
 
             <div class="brand">
-                LEORA TRANS
+                LEONY BINTANG TRANS
             </div>
 
             <div class="info">
@@ -264,7 +264,7 @@
 
         <div class="footer">
             Terima kasih telah menggunakan<br>
-            layanan Leora Trans<br><br>
+            layanan Leony Bintang Trans<br><br>
 
             <span class="code">
                 Receipt: {{ $payment->payment_code }}

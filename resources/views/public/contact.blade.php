@@ -179,9 +179,9 @@
                 }
 
                 const text =
-                    `Halo Admin Leora Trans,
+                    `Halo Admin Leony Bintang Trans,
 
-Saya ingin menghubungi Leora Trans.
+Saya ingin menghubungi Leony Bintang Trans.
 
 ━━━━━━━━━━━━━━━━━━━━
 

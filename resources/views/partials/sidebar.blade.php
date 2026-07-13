@@ -3,7 +3,7 @@
     <div class="p-6 border-b border-[#3c3c3c]">
 
         <h1 class="text-2xl font-bold uppercase">
-            Leora Trans
+            Leony Bintang Trans
         </h1>
 
         <div class="flex mt-3 h-1">
