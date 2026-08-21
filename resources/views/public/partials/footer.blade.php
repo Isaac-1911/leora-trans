@@ -34,12 +34,12 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-phone"></i>
-                        <span>+62 812-3456-7890</span>
+                        <span>+62 852 0490 0197</span>
                     </li>
 
                     <li>
                         <i class="fa-regular fa-envelope"></i>
-                        <span>info@leonitrans.com</span>
+                        <span>leonytranss@gmail.com</span>
                     </li>
 
                     <li>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Leona Trans. All rights reserved.</p>
+            <p>© 2026 Leony Trans. All rights reserved.</p>
         </div>
 
     </div>

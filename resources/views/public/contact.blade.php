@@ -118,8 +118,8 @@
 
                             <div>
                                 <h3>EMAIL</h3>
-                                <p>info@leonitrans.com</p>
-                                <p>booking@leonatrans.com</p>
+                                <p>leonytranss@gmail.com</p>
+                                <p>booking@leonytrans.com</p>
                             </div>
                         </div>
 
